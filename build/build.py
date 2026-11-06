@@ -27,6 +27,14 @@ NAV = [
     ("/chi-siamo/", "Chi siamo"),
 ]
 
+TEMI = {  # path -> (classe, colore, colore chiaro)
+    "/radon/": ("radon", "#C98A00", "#FBF3E0"),
+    "/muffa/": ("muffa", "#5E7A3A", "#EEF3E6"),
+    "/aria/": ("aria", "#2E7FB8", "#E6F1F9"),
+    "/ventilazione/": ("ventilazione", "#7A5CB8", "#EFEAF8"),
+    "/acqua/": ("acqua", "#1C8C8C", "#E3F3F3"),
+}
+
 # Sezioni: (path, nome, lead, guide previste)
 SEZIONI = [
     ("/radon/", "Radon", "Un gas radioattivo che sale dal suolo. È regolato per legge, poco misurato, e si conosce solo con una misura.", [
@@ -360,10 +368,75 @@ def scala_svg(compatta=False):
     return "".join(out)
 
 
+def casa_svg(focus=None, cls="casa"):
+    """Casa in sezione: radon dal suolo, muffa sul muro, aria dalla finestra, acqua nei tubi, ventilazione sul tetto."""
+    f = f" focus-{focus}" if focus else ""
+    return f"""<svg class="{cls}{f}" viewBox="0 0 640 420" role="img" aria-label="Casa in sezione: il radon sale dal terreno, la muffa sul muro del seminterrato, l'aria entra dalla finestra, l'acqua arriva dai tubi, la ventilazione esce dal tetto">
+<defs>
+<pattern id="terra" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.3" fill="#B59A74" opacity=".55"/><circle cx="10" cy="10" r="1" fill="#B59A74" opacity=".4"/></pattern>
+</defs>
+<!-- cielo e terreno -->
+<rect x="0" y="0" width="640" height="420" fill="none"/>
+<rect x="0" y="300" width="640" height="120" fill="#E9DFCF"/>
+<rect x="0" y="300" width="640" height="120" fill="url(#terra)"/>
+<path d="M0 300 H640" stroke="#C8B89C" stroke-width="2"/>
+<circle cx="80" cy="80" r="26" fill="#F3C867" opacity=".9"/>
+<path d="M520 60 a16 16 0 0 1 30 -8 a14 14 0 0 1 26 8 a10 10 0 0 1 -4 20 H524 a10 10 0 0 1 -4 -20z" fill="#FFFFFF" stroke="#DDE5EB" stroke-width="2"/>
+<!-- casa: seminterrato -->
+<rect x="150" y="300" width="340" height="80" fill="#F7F3EC" stroke="#4A4035" stroke-width="3"/>
+<!-- piano terra -->
+<rect x="150" y="190" width="340" height="110" fill="#FFFFFF" stroke="#4A4035" stroke-width="3"/>
+<path d="M150 300 H490" stroke="#4A4035" stroke-width="3"/>
+<!-- tetto -->
+<path d="M130 190 L320 70 L510 190 Z" fill="#F0E6D8" stroke="#4A4035" stroke-width="3" stroke-linejoin="round"/>
+<!-- camino / ventilazione -->
+<g class="l-ventilazione">
+<rect x="412" y="100" width="34" height="60" fill="#F7F3EC" stroke="#4A4035" stroke-width="3"/>
+<path d="M429 92 c-10 -14 10 -22 0 -36" fill="none" stroke="#7A5CB8" stroke-width="4" stroke-linecap="round"/>
+<path d="M443 86 c-8 -12 8 -18 0 -30" fill="none" stroke="#7A5CB8" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+<path d="M415 86 c-8 -12 8 -18 0 -30" fill="none" stroke="#7A5CB8" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+</g>
+<!-- finestra e aria -->
+<g class="l-aria">
+<rect x="190" y="215" width="70" height="60" fill="#E6F1F9" stroke="#4A4035" stroke-width="3"/>
+<path d="M225 215 V275 M190 245 H260" stroke="#4A4035" stroke-width="2"/>
+<path d="M120 240 h50" stroke="#2E7FB8" stroke-width="4" stroke-linecap="round"/>
+<path d="M160 232 l12 8 -12 8" fill="none" stroke="#2E7FB8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M110 258 h40" stroke="#2E7FB8" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+<path d="M110 222 h40" stroke="#2E7FB8" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+</g>
+<!-- porta -->
+<rect x="400" y="230" width="44" height="70" fill="#F0E6D8" stroke="#4A4035" stroke-width="3"/>
+<!-- muffa sul muro del seminterrato -->
+<g class="l-muffa">
+<circle cx="163" cy="312" r="7" fill="#5E7A3A" opacity=".8"/><circle cx="175" cy="322" r="5" fill="#5E7A3A" opacity=".65"/><circle cx="160" cy="330" r="4" fill="#5E7A3A" opacity=".7"/><circle cx="170" cy="340" r="6" fill="#5E7A3A" opacity=".5"/><circle cx="158" cy="349" r="3" fill="#5E7A3A" opacity=".6"/>
+</g>
+<!-- tubo acqua -->
+<g class="l-acqua">
+<path d="M560 420 V340 H490" fill="none" stroke="#1C8C8C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M490 340 V320" fill="none" stroke="#1C8C8C" stroke-width="7" stroke-linecap="round"/>
+<path d="M470 312 c0 6 -4 9 -4 13 a4 4 0 0 0 8 0 c0 -4 -4 -7 -4 -13z" fill="#1C8C8C"/>
+<path d="M458 330 c0 5 -3 7 -3 10 a3 3 0 0 0 6 0 c0 -3 -3 -5 -3 -10z" fill="#1C8C8C" opacity=".6"/>
+</g>
+<!-- radon dal suolo -->
+<g class="l-radon">
+<path d="M230 410 c-8 -16 8 -24 0 -40 c-8 -16 8 -24 0 -40" fill="none" stroke="#C98A00" stroke-width="4" stroke-linecap="round"/>
+<path d="M300 414 c-8 -16 8 -24 0 -40 c-8 -16 8 -24 0 -40" fill="none" stroke="#C98A00" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+<path d="M370 410 c-8 -16 8 -24 0 -40 c-8 -16 8 -24 0 -40" fill="none" stroke="#C98A00" stroke-width="4" stroke-linecap="round"/>
+<circle cx="250" cy="330" r="4" fill="#C98A00"/><circle cx="330" cy="318" r="3" fill="#C98A00" opacity=".7"/><circle cx="395" cy="336" r="4" fill="#C98A00"/><circle cx="280" cy="350" r="3" fill="#C98A00" opacity=".6"/><circle cx="350" cy="360" r="3" fill="#C98A00" opacity=".8"/>
+<!-- fessura nel pavimento -->
+<path d="M300 380 l6 -8 -4 -6 5 -6" fill="none" stroke="#4A4035" stroke-width="2"/>
+</g>
+</svg>"""
+
+
 def nav_html(current):
     items = []
     for href, label in NAV:
-        cls = ' class="on"' if current.startswith(href) else ""
+        classes = []
+        if current.startswith(href): classes.append("on")
+        if href in TEMI: classes.append("t-" + TEMI[href][0])
+        cls = f' class="{" ".join(classes)}"' if classes else ""
         items.append(f'<a href="{href}"{cls}>{esc(label)}</a>')
     return '<nav class="nav" aria-label="Sezioni">' + "".join(items) + "</nav>"
 
@@ -393,6 +466,12 @@ FOOTER = """<footer class="foot">
 <p><a href="/feed.xml">Feed RSS</a> · <a href="/chi-siamo/">Chi siamo</a> · <a href="/come-lavoriamo/">Come lavoriamo</a> · <a href="/come-lavoriamo/#come-ci-sosteniamo">Come ci sosteniamo</a></p>
 </div>
 </footer>"""
+
+
+def tema_di(path):
+    for k, v in TEMI.items():
+        if path.startswith(k): return v[0]
+    return ""
 
 
 def render_page(p):
@@ -433,7 +512,7 @@ def render_page(p):
 {'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
-<body>
+<body class="tema-{tema_di(p['path'])}">
 {header(p['path'])}
 <main class="wrap {layout_cls}">
 <article class="testo">
@@ -470,12 +549,12 @@ def render_sezione(path, nome, lead, previste, radon):
 <link rel="canonical" href="{SITE}{path}">
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
-<body>
+<body class="tema-{tema_di(path)}">
 {header(path)}
 <main class="wrap pagina">
 <article class="testo sezione">
-<h1>{esc(nome)}</h1>
-<p class="lead">{esc(lead)}</p>
+<div class="sezione-testa"><div><h1>{esc(nome)}</h1>
+<p class="lead">{esc(lead)}</p></div><figure class="sezione-casa">{casa_svg(tema_di(path))}</figure></div>
 {intro_vuota}
 {pub_html}
 <h2>{titolo_prev}</h2>
@@ -552,7 +631,7 @@ def render_home(radon):
         for p in radon)
     ultime = "".join(f'<li><time datetime="{n[1]}">{esc(n[2])}</time><a href="/news/{n[0]}/">{esc(n[3])}</a></li>' for n in NEWS[:3])
     temi = "".join(
-        f'<li><a href="{path}"><strong>{esc(nome)}</strong><span>{esc(lead)}</span><em>{len(prev)} guide in preparazione</em></a></li>'
+        f'<li class="t-{TEMI[path][0]}"><a href="{path}"><strong>{esc(nome)}</strong><span>{esc(lead)}</span><em>{len(prev)} guide in preparazione</em></a></li>'
         for path, nome, lead, prev in SEZIONI if path != "/radon/")
     return f"""<!DOCTYPE html>
 <html lang="it">
@@ -566,11 +645,18 @@ def render_home(radon):
 {header('/')}
 <main>
 <section class="hero">
-<div class="wrap">
-<h1>Quanto radon c'è in casa tua?<br>Nessuno lo sa senza una misura.</h1>
-<p class="hero-p">Casa Respira spiega aria e acqua dentro casa con i numeri delle fonti pubbliche: cosa misurare, quando è un problema, cosa fare e quanto costa.</p>
-<figure class="scala-box scala-hero">{scala_svg()}<figcaption>La scala del radon: il valore medio annuo della tua casa si confronta con questi livelli, fissati dal D.Lgs. 101/2020 e dall'OMS.</figcaption></figure>
+<div class="wrap hero-in">
+<div class="hero-testo">
+<h1>Cosa respiri e cosa bevi dentro casa?</h1>
+<p class="hero-p">Il radon che sale dal terreno, la muffa sui muri, l'aria che entra dalle finestre, l'acqua che arriva dai tubi. Casa Respira li spiega con i numeri delle fonti pubbliche: cosa misurare, quando è un problema, cosa fare e quanto costa.</p>
+<p class="hero-temi"><a class="t-radon" href="/radon/">Radon</a><a class="t-muffa" href="/muffa/">Muffa e umidità</a><a class="t-aria" href="/aria/">Aria</a><a class="t-ventilazione" href="/ventilazione/">Ventilazione</a><a class="t-acqua" href="/acqua/">Acqua</a></p>
 </div>
+<figure class="hero-casa">{casa_svg()}</figure>
+</div>
+</section>
+<section class="wrap radon-apre">
+<h2>Si parte dal radon: nessuno sa quanto ce n'è in casa senza una misura</h2>
+<figure class="scala-box scala-hero">{scala_svg()}<figcaption>La scala del radon: il valore medio annuo della tua casa si confronta con questi livelli, fissati dal D.Lgs. 101/2020 e dall'OMS.</figcaption></figure>
 </section>
 <section class="wrap guide">
 <h2>Le guide sul radon</h2>
@@ -663,7 +749,7 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
 .lista-guide{list-style:none;padding:0;margin:16px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--aria);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
+.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid #C98A00;border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
 .lista-guide a:hover{border-left-color:var(--ambra);background:#FBFDFE}
 .lista-guide strong{display:block;font-size:17.5px;margin-bottom:6px}
 .lista-guide span{font-size:15px;color:var(--grigio)}
@@ -677,6 +763,8 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .pagina{padding:36px 24px 56px}
 .pagina-guida{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px;align-items:start}
 .testo{max-width:var(--misura)}
+.testo.sezione{max-width:none}
+.sezione .lead,.sezione .previste,.sezione>p{max-width:var(--misura)}
 .testo>p,.testo>ul,.testo>ol{max-width:var(--misura)}
 .verifica{color:var(--grigio);font-size:14.5px;margin-bottom:10px}
 .verifica::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--aria);margin-right:8px;vertical-align:middle}
@@ -733,6 +821,44 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .ultime h2{margin-top:0}
 .news-item h2{font-size:19px;margin-top:28px}
 
+/* temi e illustrazione */
+.t-radon{--tema:#C98A00;--tema-ch:#FBF3E0}
+.t-muffa{--tema:#5E7A3A;--tema-ch:#EEF3E6}
+.t-aria{--tema:#2E7FB8;--tema-ch:#E6F1F9}
+.t-ventilazione{--tema:#7A5CB8;--tema-ch:#EFEAF8}
+.t-acqua{--tema:#1C8C8C;--tema-ch:#E3F3F3}
+body.tema-radon{--tema:#C98A00;--tema-ch:#FBF3E0}
+body.tema-muffa{--tema:#5E7A3A;--tema-ch:#EEF3E6}
+body.tema-aria{--tema:#2E7FB8;--tema-ch:#E6F1F9}
+body.tema-ventilazione{--tema:#7A5CB8;--tema-ch:#EFEAF8}
+body.tema-acqua{--tema:#1C8C8C;--tema-ch:#E3F3F3}
+.nav a.on{box-shadow:inset 0 -3px 0 var(--tema,var(--aria))}
+.nav a[class*="t-"]:hover{box-shadow:inset 0 -3px 0 var(--tema);background:var(--tema-ch)}
+.hero{background:linear-gradient(180deg,#FFFFFF 0%,#F4EEE3 100%);border-bottom:1px solid var(--nebbia);padding:36px 0 0;overflow:hidden}
+.hero-casa svg{margin-bottom:-6px}
+.hero-in{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.hero h1{max-width:16ch}
+.hero-p{font-size:17.5px;margin:16px 0 20px}
+.hero-temi{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.hero-temi a{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--tema-ch);color:var(--tema);font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent}
+.hero-temi a:hover{border-color:var(--tema)}
+.hero-casa{margin:0}
+.casa{width:100%;height:auto;display:block}
+.radon-apre{padding:36px 24px 8px}
+.radon-apre h2{margin-top:0;max-width:30ch;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:26px}
+.lista-temi a{border-top:5px solid var(--tema)}
+.lista-temi a:hover{background:var(--tema-ch);border-color:var(--tema)}
+.lista-temi em{color:var(--tema)}
+.verifica::before{background:var(--tema,var(--aria))}
+.chiave{border-top-color:var(--tema,var(--ambra))}
+.chiave-u{color:var(--tema,var(--aria-scura))}
+.breve{background:var(--tema-ch,var(--nebbia-chiara))}
+.sezione-testa{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center;margin-bottom:12px}
+.sezione-casa{margin:0}
+.casa[class*="focus-"] g[class^="l-"]{opacity:.18}
+.casa.focus-radon .l-radon,.casa.focus-muffa .l-muffa,.casa.focus-aria .l-aria,.casa.focus-ventilazione .l-ventilazione,.casa.focus-acqua .l-acqua{opacity:1}
+.sezione .lead{border-left:4px solid var(--tema,var(--aria));padding-left:14px}
+
 /* piè di pagina */
 .foot{background:var(--bianco);border-top:1px solid var(--nebbia);padding:28px 0 36px;margin-top:20px;color:var(--grigio);font-size:14.5px}
 .foot p{max-width:80ch}
@@ -746,6 +872,10 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
   .brand-pay{font-size:12px}
   .lista-guide{grid-template-columns:1fr}
   .lista-temi{grid-template-columns:1fr}
+  .hero-in{grid-template-columns:1fr}
+  .hero-casa{max-width:420px}
+  .sezione-testa{grid-template-columns:1fr}
+  .sezione-casa{max-width:320px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 """
