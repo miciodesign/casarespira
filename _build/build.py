@@ -10,8 +10,8 @@ import shutil
 import hashlib
 
 import pathlib
-OUT = str(pathlib.Path(__file__).resolve().parent.parent / "site")
-OUT_BOZZE = str(pathlib.Path(__file__).resolve().parent.parent / "bozze")
+OUT = str(pathlib.Path(__file__).resolve().parent.parent)
+OUT_BOZZE = str(pathlib.Path(__file__).resolve().parent / "bozze")
 SITE = "https://casarespira.it"
 DATA_ULTIMA_VERIFICA = "6 novembre 2026"
 PUB_RFC822 = "Fri, 06 Nov 2026 10:00:00 +0100"
@@ -894,10 +894,16 @@ def build():
     global HEAD_COMMON
     cssv = hashlib.md5(CSS.encode()).hexdigest()[:8]
     HEAD_COMMON = HEAD_COMMON.replace("{CSSV}", cssv)
-    for d in (OUT, OUT_BOZZE):
-        if os.path.isdir(d):
-            shutil.rmtree(d)
-    os.makedirs(OUT)
+    # pulisce solo ciò che genera, mai la radice del repository
+    GENERATI = ["assets", "chi-siamo", "come-lavoriamo", "come-ci-sosteniamo", "radon", "muffa", "aria",
+                "ventilazione", "acqua", "news", "index.html", "feed.xml", "sitemap.xml", "robots.txt"]
+    for g in GENERATI:
+        pth = os.path.join(OUT, g)
+        if os.path.isdir(pth): shutil.rmtree(pth)
+        elif os.path.isfile(pth): os.remove(pth)
+    if os.path.isdir(OUT_BOZZE):
+        shutil.rmtree(OUT_BOZZE)
+    os.makedirs(OUT, exist_ok=True)
     write(OUT, f"/assets/site-{cssv}.css", CSS)
     write(OUT, "/assets/favicon.svg", FAVICON)
 
