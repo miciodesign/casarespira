@@ -1,0 +1,7 @@
+# Cartelle e file di lavoro non vanno serviti
+RedirectMatch 404 ^/_build/
+RedirectMatch 404 ^/\.git
+RedirectMatch 404 ^/README\.md$
+RedirectMatch 404 ^/\.gitignore$
+# La vecchia pagina "Come ci sosteniamo" ora è un paragrafo di Come lavoriamo
+Redirect 301 /come-ci-sosteniamo/ /come-lavoriamo/
