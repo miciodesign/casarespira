@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#16222E"/><path d="M6 21a10 10 0 0 1 20 0" fill="none" stroke="#2E7FB8" stroke-width="3" stroke-linecap="round"/><rect x="9" y="23" width="14" height="3" rx="1.5" fill="#C98A00"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Casa Respira">
+<rect width="120" height="120" rx="26" fill="#16222E"/>
+<path d="M24 78 A36 36 0 0 1 96 78" fill="none" stroke="#2E7FB8" stroke-width="10" stroke-linecap="round"/>
+<path d="M40 78 A20 20 0 0 1 80 78" fill="none" stroke="#2E7FB8" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+<rect x="28" y="84" width="64" height="10" rx="5" fill="#C98A00"/>
+<circle cx="60" cy="66" r="6" fill="#C98A00"/>
+</svg>

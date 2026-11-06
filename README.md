@@ -4,6 +4,7 @@ Guida indipendente ad aria e acqua dentro casa. Sito statico: https://casarespir
 
 ## Struttura
 
+- `_build/grafica.py`: logo e copertine social (assets/og). Si lancia dopo build.py.
 - `_build/build.py`: generatore. Contiene testi, notizie, sezioni e CSS. Produce il sito nella radice del repository.
 - tutto il resto: il sito pronto. Hostinger lo pubblica dalla radice del repository in `public_html`.
 

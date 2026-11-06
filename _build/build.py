@@ -448,13 +448,27 @@ HEAD_COMMON = """<meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site-{CSSV}.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/logo-192.png">
+"""
+
+
+def og(titolo, desc, path, slug):
+    return f"""<meta property="og:type" content="website">
+<meta property="og:site_name" content="Casa Respira">
+<meta property="og:title" content="{esc(titolo)}">
+<meta property="og:description" content="{esc(desc)}">
+<meta property="og:url" content="{SITE}{path}">
+<meta property="og:image" content="{SITE}/assets/og/{slug}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 """
 
 
 def header(current):
     return f"""<header class="top">
 <div class="wrap top-in">
-<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 28" width="40" height="28"><path d="M4 22 A16 16 0 0 1 36 22" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M11 22 A9 9 0 0 1 29 22" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" opacity=".45"/><rect x="8" y="24.5" width="24" height="3" rx="1.5" fill="#C98A00"/></svg></span><span class="brand-text"><span class="brand-name">Casa Respira</span><span class="brand-pay">aria e acqua di casa, misurate e spiegate</span></span></a>
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 120 120" width="44" height="44"><rect width="120" height="120" rx="26" fill="#16222E"/><path d="M24 78 A36 36 0 0 1 96 78" fill="none" stroke="#2E7FB8" stroke-width="10" stroke-linecap="round"/><path d="M40 78 A20 20 0 0 1 80 78" fill="none" stroke="#2E7FB8" stroke-width="7" stroke-linecap="round" opacity=".5"/><rect x="28" y="84" width="64" height="10" rx="5" fill="#C98A00"/><circle cx="60" cy="66" r="6" fill="#C98A00"/></svg></span><span class="brand-text"><span class="brand-name">Casa Respira</span><span class="brand-pay">aria e acqua di casa, misurate e spiegate</span></span></a>
 {nav_html(current)}
 </div>
 </header>"""
@@ -509,7 +523,7 @@ def render_page(p):
 {HEAD_COMMON}<title>{esc(p['title'])} | Casa Respira</title>
 <meta name="description" content="{esc(p['desc'])}">
 <link rel="canonical" href="{SITE}{p['path']}">
-{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+{og(p['title'], p['desc'], p['path'], p['path'].strip('/').replace('/', '-'))}{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body class="tema-{tema_di(p['path'])}">
@@ -547,7 +561,7 @@ def render_sezione(path, nome, lead, previste, radon):
 {HEAD_COMMON}<title>{esc(nome)} | Casa Respira</title>
 <meta name="description" content="{esc(lead)}">
 <link rel="canonical" href="{SITE}{path}">
-<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
+{og(nome, lead, path, tema_di(path))}<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body class="tema-{tema_di(path)}">
 {header(path)}
@@ -577,6 +591,7 @@ def render_news_item(n):
 {HEAD_COMMON}<title>{esc(titolo)} | Casa Respira</title>
 <meta name="description" content="{esc(fatto[:150])}">
 <link rel="canonical" href="{SITE}/news/{slug}/">
+{og(titolo, fatto[:150], f"/news/{slug}/", "news-" + slug)}
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body>
@@ -607,6 +622,7 @@ def render_news_index():
 {HEAD_COMMON}<title>News | Casa Respira</title>
 <meta name="description" content="Notizie brevi su radon, aria e acqua di casa: campagne di misura, nuove aree prioritarie, norme. Solo con fonte istituzionale e data.">
 <link rel="canonical" href="{SITE}/news/">
+{og("News | Casa Respira", "Campagne di misura gratuite, nuove aree prioritarie, norme. Solo con fonte e data.", "/news/", "news")}
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body>
@@ -639,7 +655,7 @@ def render_home(radon):
 {HEAD_COMMON}<title>Casa Respira | Aria e acqua di casa, misurate e spiegate</title>
 <meta name="description" content="Guida indipendente su aria e acqua dentro casa. Il radon è il tema di partenza: livelli di legge, come si misura, come si riduce.">
 <link rel="canonical" href="{SITE}/">
-<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
+{og("Casa Respira | Aria e acqua di casa, misurate e spiegate", "Guida indipendente su aria e acqua dentro casa. Radon, muffa, aria, ventilazione e acqua, spiegati con i numeri delle fonti pubbliche.", "/", "home")}<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body>
 {header('/')}
@@ -895,7 +911,7 @@ def build():
     cssv = hashlib.md5(CSS.encode()).hexdigest()[:8]
     HEAD_COMMON = HEAD_COMMON.replace("{CSSV}", cssv)
     # pulisce solo ciò che genera, mai la radice del repository
-    GENERATI = ["assets", "chi-siamo", "come-lavoriamo", "come-ci-sosteniamo", "radon", "muffa", "aria",
+    GENERATI = ["chi-siamo", "come-lavoriamo", "come-ci-sosteniamo", "radon", "muffa", "aria",
                 "ventilazione", "acqua", "news", "index.html", "feed.xml", "sitemap.xml", "robots.txt"]
     for g in GENERATI:
         pth = os.path.join(OUT, g)
@@ -904,8 +920,10 @@ def build():
     if os.path.isdir(OUT_BOZZE):
         shutil.rmtree(OUT_BOZZE)
     os.makedirs(OUT, exist_ok=True)
+    for f in os.listdir(os.path.join(OUT, "assets")) if os.path.isdir(os.path.join(OUT, "assets")) else []:
+        if f.startswith("site-") and f.endswith(".css"):
+            os.remove(os.path.join(OUT, "assets", f))
     write(OUT, f"/assets/site-{cssv}.css", CSS)
-    write(OUT, "/assets/favicon.svg", FAVICON)
 
     live = [p for p in PAGES if p["status"] == "live"]
     radon = [p for p in live if p["section"] == "radon"]

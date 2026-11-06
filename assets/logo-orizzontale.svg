@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120" role="img" aria-label="Casa Respira, aria e acqua di casa, misurate e spiegate">
+<g transform="translate(0,0) scale(1)">
+<rect width="120" height="120" rx="26" fill="#16222E"/>
+<path d="M24 78 A36 36 0 0 1 96 78" fill="none" stroke="#2E7FB8" stroke-width="10" stroke-linecap="round"/>
+<path d="M40 78 A20 20 0 0 1 80 78" fill="none" stroke="#2E7FB8" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+<rect x="28" y="84" width="64" height="10" rx="5" fill="#C98A00"/>
+<circle cx="60" cy="66" r="6" fill="#C98A00"/>
+</g>
+<text x="142" y="62" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="46" fill="#16222E">Casa Respira</text>
+<text x="144" y="92" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#5F6E7B">aria e acqua di casa, misurate e spiegate</text>
+</svg>
