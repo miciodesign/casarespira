@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Casa Respira</title>
+<link>https://casarespira.it/</link>
+<description>Guida indipendente su aria e acqua dentro casa. Il radon è il tema di partenza.</description>
+<language>it</language>
+<atom:link href="https://casarespira.it/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Bergamo: dal 1° ottobre misura gratuita del radon in nove comuni</title>
+<link>https://casarespira.it/news/bergamo-campagna-radon-ottobre-2026/</link>
+<guid isPermaLink="true">https://casarespira.it/news/bergamo-campagna-radon-ottobre-2026/</guid>
+<pubDate>Wed, 30 Sep 2026 09:00:00 +0100</pubDate>
+<description>ATS Bergamo, con ARPA Lombardia, ha avviato dal 1° ottobre 2026 una campagna gratuita di misura del radon nelle abitazioni di nove comuni della provincia. Ai cittadini che aderiscono viene consegnato un dosimetro passivo da posizionare in casa; la prima misura dura circa sei mesi e al termine ogni partecipante riceve il risultato della propria abitazione.</description>
+</item><item>
+<title>Aree prioritarie radon: a luglio 2026 il punto Regione per Regione</title>
+<link>https://casarespira.it/news/aree-prioritarie-italia-luglio-2026/</link>
+<guid isPermaLink="true">https://casarespira.it/news/aree-prioritarie-italia-luglio-2026/</guid>
+<pubDate>Wed, 22 Jul 2026 09:00:00 +0100</pubDate>
+<description>ARPA Lombardia tiene aggiornata la mappa delle aree prioritarie a rischio radon in Italia. Al 22 luglio 2026 hanno completato la prima individuazione, con pubblicazione in Gazzetta Ufficiale, tra le altre: Lombardia (90 comuni), Liguria (16), Valle d&#x27;Aosta (11), Provincia di Bolzano (58) e Provincia di Trento (15). L&#x27;Emilia-Romagna ha preso atto che, dai dati disponibili, nessun comune rientra in area prioritaria. Al 31 gennaio 2026 i comuni classificati in Italia erano 394.</description>
+</item><item>
+<title>Trentino: approvate le aree prioritarie e aperta la misura gratuita per tutti i cittadini</title>
+<link>https://casarespira.it/news/trentino-misure-gratuite-maggio-2026/</link>
+<guid isPermaLink="true">https://casarespira.it/news/trentino-misure-gratuite-maggio-2026/</guid>
+<pubDate>Fri, 15 May 2026 09:00:00 +0100</pubDate>
+<description>La Giunta provinciale di Trento ha approvato il 15 maggio 2026 la prima individuazione delle aree prioritarie a rischio radon, basata su oltre 1.300 misure fatte da APPA tra il 1995 e il 2025. In parallelo APPA ha aperto una campagna di misura gratuita nelle abitazioni, con due o più dosimetri da tenere in casa per un anno; nei primi giorni erano già arrivate quasi 200 richieste.</description>
+</item><item>
+<title>Radon in casa: la guida completa</title>
+<link>https://casarespira.it/radon/guida-completa/</link>
+<guid isPermaLink="true">https://casarespira.it/radon/guida-completa/</guid>
+<pubDate>Fri, 06 Nov 2026 10:00:00 +0100</pubDate>
+<description>Cos&#x27;è il radon, quali livelli di riferimento valgono in Italia, come si misura e come si riduce.</description>
+</item><item>
+<title>Come si misura il radon in casa</title>
+<link>https://casarespira.it/radon/come-si-misura/</link>
+<guid isPermaLink="true">https://casarespira.it/radon/come-si-misura/</guid>
+<pubDate>Fri, 06 Nov 2026 10:00:00 +0100</pubDate>
+<description>Perché serve una misura di lunga durata, come leggerla e cosa considerare nella scelta dello strumento.</description>
+</item><item>
+<title>Radon: cosa dice la legge per abitazioni e luoghi di lavoro</title>
+<link>https://casarespira.it/radon/normativa/</link>
+<guid isPermaLink="true">https://casarespira.it/radon/normativa/</guid>
+<pubDate>Fri, 06 Nov 2026 10:00:00 +0100</pubDate>
+<description>Il D.Lgs. 101/2020, i livelli di riferimento, le aree prioritarie e gli obblighi per i luoghi di lavoro.</description>
+</item><item>
+<title>Radon in Lombardia: aree prioritarie e misure</title>
+<link>https://casarespira.it/radon/lombardia/</link>
+<guid isPermaLink="true">https://casarespira.it/radon/lombardia/</guid>
+<pubDate>Fri, 06 Nov 2026 10:00:00 +0100</pubDate>
+<description>Dove si concentra il rischio radon in Lombardia, come sono state individuate le aree prioritarie e cosa fare.</description>
+</item>
+</channel>
+</rss>
