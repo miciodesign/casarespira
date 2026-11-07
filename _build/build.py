@@ -122,6 +122,14 @@ S = {
                                "https://ilfattoalimentare.it/filtri-acqua-pfas.html"),
     "savonanews_pfas": ("Savonanews, PFAS nell'acqua a Borgio Verezzi e Pietra Ligure: gli interventi di Servizi Ambientali (6 novembre 2026)",
                         "https://www.savonanews.it/2026/11/06/leggi-notizia/argomenti/attualit/articolo/pfas-nellacqua-servizi-ambientali-accelera-sugli-interventi-necessario-il-sostegno-economico-di.html"),
+    "ispra_best_practice": ("ISPRA, Quaderno Ambiente e Società, Buone pratiche per la riduzione del radon negli edifici (PDF)",
+                            "https://www.isprambiente.gov.it/files2024/pubblicazioni/quaderni/best-practice-riduzione-radon_quaderno-ispra_18_12_rev1.pdf"),
+    "lomb_lg_2025": ("Regione Lombardia, DGR XII/5469 del 9 dicembre 2025, Linee guida per la prevenzione delle esposizioni al gas radon (PDF)",
+                     "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/01-sanita/05-prevenzione-e-stili-di-vita/01-sicurezza-negli-ambienti-di-vita/red-campagna-gas-radon/DGR%205469_2025_linee_guida_radon_all.pdf"),
+    "lomb_ddg_2011": ("Regione Lombardia, DDG 12678 del 21 dicembre 2011, Linee guida radon, capitolo 3 Tecniche di prevenzione e mitigazione (PDF)",
+                      "https://www.radon.it/site/download/ddg_lombardia_12678_21-12-2011.pdf"),
+    "ediltecnico_2025": ("Ediltecnico, Gas radon: cosa cambia per le nuove costruzioni dal 1° gennaio 2025",
+                         "https://ediltecnico.it/gas-radon-cosa-cambia-nuove-costruzioni-dal-1-gennaio-2025/"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -216,6 +224,7 @@ add("/radon/guida-completa/", "Radon in casa: la guida completa",
 <li><a href="/radon/come-si-misura/">Come si misura il radon in casa</a></li>
 <li><a href="/radon/normativa/">Radon: cosa dice la legge per abitazioni e luoghi di lavoro</a></li>
 <li><a href="/radon/lombardia/">Radon in Lombardia: aree prioritarie e misure</a></li>
+<li><a href="/radon/vespaio-aerato/">Vespaio aerato: com'è fatto e perché protegge da radon e umidità</a></li>
 </ul>
 <p class="nota">Questa guida non sostituisce il parere di un tecnico o del medico. Per sintomi o dubbi sulla salute, rivolgiti al medico o all'ASL.</p>
 """, sources=fonti("arpa_puglia_nota", "asl_roma3", "iss_epicentro", "ats_brescia_2025", "arpae_ecoscienza", "certifico_anr", "iss_riduzione"),
@@ -299,6 +308,90 @@ add("/radon/lombardia/", "Radon in Lombardia: aree prioritarie e misure",
            "La media regionale stimata è 100-120 Bq/m³, contro circa 70 in Italia.",
            "Anche fuori dai 90 comuni il radon può essere alto: solo la misura lo dice."],
     chiave=("90", "comuni", "in area prioritaria in Lombardia, prima individuazione del 2023"))
+
+VESPAIO_SVG = """<figure class="schema"><svg viewBox="0 0 760 360" role="img" aria-label="Sezione di un vespaio aerato con numeri: 1 terreno, 2 casseri a cupola, 3 soletta, 4 membrana, 5 pavimento, 6 bocchette su lati opposti" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif">
+<rect width="760" height="360" fill="#fff"/>
+<rect x="0" y="250" width="760" height="110" fill="#E9DFC9"/>
+<g fill="#C9B894"><circle cx="60" cy="290" r="2.5"/><circle cx="150" cy="330" r="2.5"/><circle cx="330" cy="310" r="2.5"/><circle cx="520" cy="335" r="2.5"/><circle cx="700" cy="300" r="2.5"/><circle cx="430" cy="280" r="2.5"/></g>
+<rect x="100" y="40" width="36" height="210" fill="#F3EEE3" stroke="#16222E" stroke-width="2"/>
+<rect x="624" y="40" width="36" height="210" fill="#F3EEE3" stroke="#16222E" stroke-width="2"/>
+<rect x="78" y="250" width="80" height="32" fill="#D9D4C8" stroke="#16222E" stroke-width="2"/>
+<rect x="602" y="250" width="80" height="32" fill="#D9D4C8" stroke="#16222E" stroke-width="2"/>
+<rect x="136" y="232" width="488" height="18" fill="#D9D4C8" stroke="#16222E" stroke-width="1.5"/>
+<path d="M136 232 h6 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h7 a27 40 0 0 1 54 0 h6 v-14 h-488 z" fill="#EEF2F5" stroke="#16222E" stroke-width="2"/>
+<rect x="136" y="174" width="488" height="16" fill="#CFD6DC" stroke="#16222E" stroke-width="2"/>
+<path d="M136 172 H624 M136 172 V128 M624 172 V128" stroke="#C98A00" stroke-width="5" fill="none"/>
+<rect x="136" y="150" width="488" height="20" fill="#F3EEE3" stroke="#16222E" stroke-width="1.5"/>
+<rect x="136" y="142" width="488" height="8" fill="#16222E"/>
+<rect x="100" y="212" width="36" height="16" fill="#fff" stroke="#16222E" stroke-width="2"/>
+<rect x="624" y="192" width="36" height="16" fill="#fff" stroke="#16222E" stroke-width="2"/>
+<g stroke="#2E7FB8" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 220 H92"/><path d="M84 213 l9 7 -9 7"/>
+<path d="M250 214 c25 -9 50 9 75 0 s50 9 75 0 s50 9 75 0"/><path d="M468 207 l9 7 -9 7"/>
+<path d="M668 200 H720"/><path d="M712 193 l9 7 -9 7"/>
+</g>
+<g stroke="#C98A00" stroke-width="2.5" fill="none" stroke-dasharray="3 5"><path d="M260 282 v-44"/><path d="M380 282 v-44"/><path d="M500 282 v-44"/></g>
+<g font-size="13" fill="#2E7FB8" font-weight="600"><text x="40" y="206">aria entra</text><text x="668" y="232">aria esce</text></g>
+<g font-size="12" fill="#5F6E7B"><text x="40" y="242">lato freddo, in basso</text><text x="668" y="247">lato caldo, in alto</text></g>
+<g font-size="12" fill="#8A5F00"><text x="380" y="322" text-anchor="middle">umidità e radon salgono dal terreno</text></g>
+<g font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600">
+<g><circle cx="380" cy="300" r="12" fill="#16222E"/><text x="380" y="305" text-anchor="middle" fill="#fff">1</text></g>
+<g><circle cx="380" cy="214" r="12" fill="#16222E"/><text x="380" y="219" text-anchor="middle" fill="#fff">2</text></g>
+<g><circle cx="744" cy="182" r="12" fill="#16222E"/><text x="744" y="187" text-anchor="middle" fill="#fff">3</text></g>
+<g><circle cx="744" cy="150" r="12" fill="#C98A00"/><text x="744" y="155" text-anchor="middle" fill="#fff">4</text></g>
+<g><circle cx="744" cy="118" r="12" fill="#16222E"/><text x="744" y="123" text-anchor="middle" fill="#fff">5</text></g>
+<g><circle cx="118" cy="190" r="12" fill="#2E7FB8"/><text x="118" y="195" text-anchor="middle" fill="#fff">6</text></g>
+</g>
+<g stroke="#16222E" stroke-width="1.2" fill="none"><path d="M732 182 H660"/><path d="M732 150 H690 V172 H626"/><path d="M732 118 H676 V160 H626"/></g>
+</svg><figcaption><strong>1</strong> terreno e magrone · <strong>2</strong> casseri a cupola (igloo): la camera d'aria continua · <strong>3</strong> soletta in calcestruzzo armato · <strong>4</strong> membrana antiradon, risvoltata sui muri · <strong>5</strong> massetto e pavimento · <strong>6</strong> bocchette su lati opposti, a quote diverse. L'aria entra dal lato freddo, attraversa la camera ed esce dal lato caldo portando con sé umidità e radon.</figcaption></figure>"""
+
+add("/radon/vespaio-aerato/", "Vespaio aerato: cos'è, come è fatto e perché protegge da radon e umidità",
+    "Com'è fatto un vespaio aerato (igloo, soletta, bocchette, membrana), come funziona la ventilazione, cosa dicono ISPRA e le linee guida regionali sul radon, e quando non basta.",
+    """
+<p>Chi costruisce o ristruttura un piano terra si sente dire che "ci vuole il vespaio aerato". È la soluzione che le linee guida sul radon raccomandano per le nuove costruzioni, ed è anche la difesa classica contro l'umidità di risalita. Questa guida spiega com'è fatto, come funziona e quando da solo non basta.</p>
+<h2>Cos'è un vespaio</h2>
+<p>Il vespaio è un'intercapedine tra il terreno e il pavimento del piano terra: una camera d'aria che stacca fisicamente la casa dal suolo. Si chiama "aerato" o "ventilato" quando quella camera è collegata all'esterno da aperture, così che l'aria la attraversi. Senza aperture è solo un vuoto chiuso, che fa poco contro l'umidità e nulla contro il radon.</p>
+<p>Il vespaio tradizionale era fatto di pietrame o ghiaia, oppure di muretti e tavelloni. Oggi si realizza quasi sempre con <strong>casseri a perdere</strong>: cupole in plastica riciclata, note con i nomi commerciali di igloo, cupolex o granchio, che si agganciano tra loro, reggono il getto di calcestruzzo e lasciano sotto un reticolo continuo di canali d'aria.</p>
+""" + VESPAIO_SVG + """
+<h2>Com'è fatto, strato per strato</h2>
+<ol>
+<li><strong>Terreno e magrone.</strong> Il fondo dello scavo viene livellato con un getto magro di calcestruzzo, su cui appoggiano i casseri.</li>
+<li><strong>Casseri a cupola.</strong> Le cupole creano la camera d'aria. Le altezze in commercio vanno da pochi centimetri a oltre un metro; nei vespai alti possono passare anche i tubi degli impianti.</li>
+<li><strong>Soletta in calcestruzzo armato.</strong> Gettata sopra le cupole, con una rete elettrosaldata; il calcestruzzo scende tra le gambe dei casseri e forma i pilastrini che reggono la soletta.</li>
+<li><strong>Membrana.</strong> Sopra la soletta, una guaina impermeabile, meglio se specifica antiradon, risvoltata sui muri perimetrali e sigillata intorno ai passaggi dei tubi. Secondo il Quaderno ISPRA sulle buone pratiche, una membrana che copre tutta la superficie è la protezione migliore contro il radon, e va posata tra la parte alta del vespaio e il massetto.</li>
+<li><strong>Massetto e pavimento.</strong></li>
+<li><strong>Bocchette di aerazione.</strong> Tubi che attraversano i muri perimetrali e collegano la camera d'aria all'esterno, protetti da griglie contro insetti e roditori.</li>
+</ol>
+<h2>Come funziona la ventilazione</h2>
+<p>Il principio è l'effetto camino. Le bocchette vanno messe su lati opposti della casa e a quote diverse: più basse sul lato freddo (nord), più alte sul lato caldo (sud). L'aria entra dal lato freddo, si scalda attraversando la camera, si carica di umidità e di radon che salgono dal terreno, ed esce dal lato caldo. Nelle linee guida lombarde il vespaio con casseri è "fortemente raccomandato" per le nuove costruzioni, a condizione che la camera d'aria sia collegata con l'esterno.</p>
+<p>Per questo la ventilazione non si improvvisa. Le bocchette devono essere distribuite lungo il perimetro, con una sezione complessiva proporzionata alla superficie del vespaio: i regolamenti edilizi e di igiene comunali fissano i minimi, e vanno verificati in fase di progetto. Due errori frequenti: bocchette tutte sullo stesso lato (l'aria non circola) e bocchette tappate dopo la costruzione, per esempio da un marciapiede, un'aiuola o un intonaco.</p>
+<h2>Cosa fa contro il radon</h2>
+<p>Il radon entra in casa dal terreno attraverso fessure, giunti e passaggi degli impianti nel solaio a terra, spinto dalla differenza di pressione tra il suolo e l'interno riscaldato. Un vespaio ventilato interrompe questo percorso in due modi: diluisce il gas nella camera d'aria e lo porta fuori prima che raggiunga il pavimento, e con la membrana sopra la soletta chiude la via di ingresso. ISPRA lo riassume così: da una parte impermeabilizzare l'edificio al radon, dall'altra favorire la ventilazione del suolo.</p>
+<p>Le linee guida di Regione Lombardia (aggiornate a dicembre 2025) aggiungono una terza cosa per le nuove costruzioni: la <strong>predisposizione passiva</strong>. Si lascia un pozzetto o una tubazione di captazione nel vespaio o nel ghiaione sotto la platea, collegati a un tubo di sfiato che arriva sopra il tetto. Se a casa finita la misura del radon è alta, basta installare un ventilatore nel pozzetto per aspirare il gas dal sottosuolo, senza rompere i pavimenti. Costa poco in cantiere, molto dopo.</p>
+<p>La ragione pratica: dal 1° gennaio 2025 per le case nuove il livello di riferimento è 200 Bq/m³, più basso dei 300 delle case esistenti (<a href="/radon/normativa/">cosa dice la legge</a>). Prevenire in fase di costruzione è l'unico modo economico per starci sotto con margine.</p>
+<h2>Cosa fa contro l'umidità</h2>
+<p>L'umidità di risalita arriva dal terreno per capillarità attraverso i materiali porosi. La camera d'aria la interrompe: il pavimento non tocca più il suolo umido, e l'aria che circola porta via il vapore. Vale per il pavimento; i muri perimetrali, che scendono fino alle fondazioni, restano a contatto con il terreno e hanno bisogno di una barriera propria (taglio orizzontale, guaina alla base del muro). Un vespaio perfetto con muri senza barriera dà pavimenti asciutti e pareti con la macchia a un metro da terra. Per riconoscere questo tipo di umidità: <a href="/muffa/muffa-in-casa/">Muffa in casa: da dove viene</a>.</p>
+<h2>Quando il vespaio non basta</h2>
+<ul>
+<li><strong>Radon molto alto nel terreno.</strong> La ventilazione naturale dipende da vento e temperatura e nelle notti d'inverno senza vento può rallentare. Nelle aree prioritarie le linee guida prevedono la ventilazione meccanica del vespaio o la depressurizzazione del suolo con ventilatore.</li>
+<li><strong>Vespaio interrato.</strong> Se il piano terra è sotto il livello del terreno, le bocchette non possono stare sui muri: servono condotti che risalgono all'esterno, e spesso un ventilatore.</li>
+<li><strong>Membrana forata o non sigillata.</strong> Ogni tubo che attraversa il solaio è una via d'ingresso se intorno non è sigillato. La posa conta quanto il materiale.</li>
+<li><strong>Edifici esistenti.</strong> Un vespaio non si aggiunge sotto una casa costruita. Chi ha radon alto in una casa esistente interviene con la depressurizzazione del suolo, di cui parliamo nella <a href="/radon/guida-completa/">guida completa</a>; il risanamento avrà una guida dedicata.</li>
+</ul>
+<h2>Cosa chiedere al progettista</h2>
+<ul>
+<li>Altezza e tipo di casseri, e come sarà ventilata la camera: posizione, quota e sezione delle bocchette, e il regolamento comunale a cui rispondono.</li>
+<li>Se la membrana è antiradon, come viene risvoltata sui muri e sigillata ai passaggi impiantistici.</li>
+<li>Se è prevista la predisposizione passiva (pozzetto e tubo di sfiato sopra il tetto), soprattutto in area prioritaria.</li>
+<li>Una misura del radon a casa finita, nel primo inverno: è l'unico modo per sapere se ha funzionato (<a href="/radon/come-si-misura/">come si misura</a>).</li>
+</ul>
+<p class="nota">Questa guida descrive la tecnica, non sostituisce un progetto. Dimensioni, altezze e sezioni di ventilazione dipendono dal terreno, dal clima e dal regolamento del Comune. I costi del vespaio saranno trattati quando verificati.</p>
+""", sources=fonti("ispra_best_practice", "lomb_lg_2025", "lomb_ddg_2011", "ediltecnico_2025"),
+    section="radon",
+    breve=["Il vespaio aerato è una camera d'aria tra terreno e pavimento, collegata all'esterno: stacca la casa dal suolo umido e porta fuori il radon prima che entri.",
+           "Oggi si fa con casseri a cupola (igloo), soletta armata, membrana antiradon e bocchette su lati opposti a quote diverse.",
+           "ISPRA e le linee guida regionali lo raccomandano per le nuove case, insieme a un pozzetto predisposto per un eventuale ventilatore."],
+    chiave=("200", "Bq/m³", "livello di riferimento per le case costruite dal 2025: il vespaio serve a starci sotto"))
 
 # ------------------------------------------------------------- guide per tema
 add("/muffa/muffa-in-casa/", "Muffa in casa: da dove viene e come eliminarla davvero",
@@ -1034,6 +1127,9 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .sc-unit{font:400 12.5px "IBM Plex Sans",sans-serif;fill:var(--grigio)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
+.schema{margin:24px 0;background:var(--bianco);border:1px solid var(--nebbia);border-radius:10px;padding:12px}
+.schema svg{width:100%;height:auto;display:block}
+.schema figcaption{font-size:14px;color:var(--grigio);margin-top:10px;line-height:1.5}
 .aff{background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--tema,var(--ambra));border-radius:8px;padding:14px 18px;margin:22px 0;font-size:15.5px}
 .aff .aff-t{margin:0 0 6px;font-weight:600;color:var(--inchiostro);font-size:14px;text-transform:uppercase;letter-spacing:.04em}
 .aff p{margin:0}
