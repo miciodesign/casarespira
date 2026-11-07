@@ -108,6 +108,20 @@ S = {
                       "https://www.normattiva.it/eli/id/2025/07/04/25G00106/CONSOLIDATED/"),
     "ispra_sintai": ("ISPRA, SINTAI, acque destinate al consumo umano: quadro del D.Lgs. 18/2023",
                      "https://www.sintai.isprambiente.it/umano/index_dett.html"),
+    "aulss9_pfas": ("AULSS 9 Scaligera (Regione Veneto), Inquinamento PFAS: storia, parere ISS 2013, area rossa",
+                    "https://sian.aulss9.veneto.it/Inquinamento-PFAS"),
+    "aulss8_pfas": ("AULSS 8 Berica (Regione Veneto), PFAS, sostanze perfluoroalchiliche: cosa sono e misure adottate",
+                    "https://www.aulss8.veneto.it/pfas-sostanze-perfluroalchiliche"),
+    "veneto_pfas_report": ("Regione Veneto, PFAS, monitoraggio della contaminazione nell'acqua destinata al consumo umano (report, PDF)",
+                           "https://salute.regione.veneto.it/contents/2025-12/2022_08_report_rete.pdf?VersionId=9J_AfoBDcs54ujaUcrCkcAZUGzWQKS5H"),
+    "dlgs_102_pdf": ("D.Lgs. 19 giugno 2025, n. 102, testo pubblicato in Gazzetta Ufficiale (PDF, copia su unionalimentari.com)",
+                     "https://www.unionalimentari.com/wp-content/uploads/2025/07/DLGS-102.2025-qualita-acque-destinate-consumo-umano.pdf"),
+    "greenpeace_rinvio": ("Greenpeace Italia, L'Italia rinvia i limiti più severi per i PFAS nell'acqua potabile (legge di bilancio 2026, commi 622-623)",
+                          "https://www.greenpeace.org/italy/storia/30124/italia-rinvia-limiti-piu-severi-per-pfas-acqua-potabile/"),
+    "fattoalimentare_filtri": ("Il Fatto Alimentare, I filtri domestici riducono i PFAS? Lo studio di Duke University e NC State (Environmental Science & Technology Letters)",
+                               "https://ilfattoalimentare.it/filtri-acqua-pfas.html"),
+    "savonanews_pfas": ("Savonanews, PFAS nell'acqua a Borgio Verezzi e Pietra Ligure: gli interventi di Servizi Ambientali (6 novembre 2026)",
+                        "https://www.savonanews.it/2026/11/06/leggi-notizia/argomenti/attualit/articolo/pfas-nellacqua-servizi-ambientali-accelera-sugli-interventi-necessario-il-sostegno-economico-di.html"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -428,6 +442,7 @@ add("/acqua/acqua-del-rubinetto/", "L'acqua del rubinetto è buona? Come saperlo
 <li><strong>Cloro residuo</strong>: il disinfettante che il gestore lascia nell'acqua perché resti sicura nei tubi. Il sapore di cloro non è un difetto di qualità: sparisce lasciando l'acqua in una caraffa aperta in frigorifero per un po'.</li>
 <li><strong>pH</strong>: tra 6,5 e 9,5.</li>
 <li><strong>Piombo</strong>: valore di parametro 10 µg/L, che il decreto abbassa a 5 µg/L dal 12 gennaio 2036. Riguarda gli edifici con tubazioni o raccordi in piombo, in genere costruiti fino ai primi anni Ottanta, soprattutto dopo lunghe ore di acqua ferma nei tubi. Una guida dedicata è in preparazione.</li>
+<li><strong>PFAS</strong>: i composti "eterni" di origine industriale, con limiti di legge dal 2026 (somma di PFAS 0,10 µg/L). Cosa sono, dove si trovano in Italia e cosa fanno i filtri: <a href="/acqua/pfas/">guida ai PFAS nell'acqua</a>.</li>
 <li><strong>Parametri microbiologici</strong> (Escherichia coli, enterococchi): devono essere assenti. Un superamento fa scattare provvedimenti del gestore e dell'ASL, con avviso ai cittadini.</li>
 </ul>
 <p>La regola generale: un valore entro il parametro dell'Allegato I significa acqua conforme per quel parametro. Nessun singolo numero "buono" o "cattivo" fuori da questo confronto.</p>
@@ -447,6 +462,54 @@ add("/acqua/acqua-del-rubinetto/", "L'acqua del rubinetto è buona? Come saperlo
            "I valori del tuo comune sono sul sito del gestore: nitrati 50 mg/L, piombo 10 µg/L (5 dal 2036), pH 6,5-9,5; durezza e cloro riguardano calcare e gusto.",
            "Un'analisi privata ha senso con pozzo, tubi vecchi o cambiamenti di odore e sapore; va fatta da un laboratorio accreditato."],
     chiave=("50", "mg/L", "valore di parametro dei nitrati nell'acqua potabile (D.Lgs. 18/2023, Allegato I)"))
+
+add("/acqua/pfas/", "PFAS nell'acqua del rubinetto: cosa sono, dove si trovano e cosa dice la legge",
+    "Cosa sono i PFAS, perché si chiamano inquinanti eterni, i limiti di legge in vigore dal 2026 in Italia, i casi del Veneto e della Liguria, come leggere i dati del tuo comune e cosa possono fare i filtri domestici.",
+    """
+<p>PFAS è una sigla che da qualche anno compare nei titoli sull'acqua potabile: prima per il Veneto, dall'autunno 2026 per la Liguria. Questa guida spiega cosa sono, perché preoccupano, cosa dice la legge italiana dal 2026 e cosa può fare, in concreto, chi apre il rubinetto.</p>
+<h2>Cosa sono i PFAS</h2>
+<p>PFAS sta per sostanze per- e polifluoroalchiliche. Sono composti chimici prodotti dall'uomo, non presenti in natura, fatti di catene di carbonio legate ad atomi di fluoro. Il legame carbonio-fluoro è tra i più stabili della chimica: per questo i PFAS resistono al calore, ai grassi e all'acqua, e per questo dagli anni Cinquanta sono stati usati in padelle antiaderenti, tessuti impermeabili, imballaggi per alimenti, schiume antincendio, cosmetici e processi industriali.</p>
+<p>La stessa stabilità li rende un problema: non si degradano nell'ambiente, si spostano con l'acqua e si accumulano negli organismi. Da qui il soprannome di "inquinanti eterni". Le aziende sanitarie venete, che se ne occupano dal 2013, li descrivono così: notevole persistenza, notevole mobilità, capacità di bioaccumulo non trascurabile.</p>
+<p>La famiglia è grande: migliaia di molecole. Le più studiate sono quattro, PFOA, PFOS, PFNA e PFHxS, dette "a catena lunga". Le più recenti, "a catena corta" come il TFA (acido trifluoroacetico), sono più difficili da trattenere con i filtri e sono state regolate solo ora.</p>
+<h2>Come arrivano nell'acqua del rubinetto</h2>
+<p>Dagli scarichi industriali e dalle schiume antincendio i PFAS finiscono nei fiumi e nelle falde. Gli acquedotti che attingono da quelle falde li portano ai rubinetti, a meno che l'acqua non venga trattata. Per chi vive in un'area contaminata, l'acqua potabile è la principale via di esposizione, come ricordano le aziende sanitarie del Veneto; gli alimenti prodotti localmente sono la seconda.</p>
+<h2>Il caso del Veneto</h2>
+<p>Nel 2013, durante un monitoraggio di contaminanti emergenti commissionato dal Ministero dell'Ambiente, i PFAS sono stati trovati in acque sotterranee, superficiali e potabili tra le province di Vicenza, Verona e Padova. La fonte è stata individuata in uno stabilimento chimico della zona. Allora non esistevano limiti di legge: la Regione chiese un parere all'Istituto Superiore di Sanità, che il 7 giugno 2013 escluse un rischio immediato ma consigliò, in via cautelativa, di trattare le acque potabili e di fissare "livelli di performance" provvisori. Sugli acquedotti sono stati installati filtri a carboni attivi; la Regione ha poi delimitato un'area di massima esposizione, la cosiddetta area rossa, di 30 comuni, e avviato dal 2016 un piano di sorveglianza sanitaria sulla popolazione, con il biomonitoraggio del sangue coordinato dall'ISS. Il monitoraggio dell'acqua di rete nell'area rossa è pubblicato dalla Regione.</p>
+<h2>Il caso della Liguria, autunno 2026</h2>
+<p>Nell'ottobre 2026 i PFAS sono stati trovati oltre i limiti nell'acqua di Borgio Verezzi e Pietra Ligure, in provincia di Savona. Il gestore ha dichiarato prioritaria l'installazione di filtri a carboni attivi per ripristinare la potabilità, la Regione Liguria ha istituito una cabina di regia e la Procura di Savona ha aperto un fascicolo. È uno dei primi casi gestiti con i nuovi limiti di legge in vigore: lo seguiamo nelle <a href="/news/">notizie</a>.</p>
+<h2>Cosa dice la legge dal 2026</h2>
+<p>Fino al 2023 in Italia non c'era un limite nazionale per i PFAS nell'acqua potabile. La direttiva europea 2020/2184, recepita con il <a href="/acqua/acqua-del-rubinetto/">D.Lgs. 18/2023</a> e completata dal D.Lgs. 102/2025, ha introdotto parametri specifici. Riassunti:</p>
+<ul>
+<li><strong>Somma di PFAS</strong>: 0,10 µg/L (cioè 100 nanogrammi per litro), calcolata su un elenco di 30 sostanze. Il controllo è obbligatorio dal 13 gennaio 2026.</li>
+<li><strong>Somma di 4 PFAS</strong> (PFOA, PFOS, PFNA, PFHxS): 0,02 µg/L, cioè 20 nanogrammi per litro. È un limite italiano, più severo di quello europeo. Doveva applicarsi da gennaio 2026; la legge di bilancio 2026 (L. 199/2025, commi 622 e 623) lo ha rinviato di sei mesi, a luglio 2026. Fino alla stessa data sei molecole dette ADV, prodotte in uno stabilimento di Alessandria, non concorrono alla somma.</li>
+<li><strong>TFA</strong> (acido trifluoroacetico): 10 µg/L, con controllo obbligatorio dal 13 gennaio 2027.</li>
+</ul>
+<p>Un chiarimento sulle unità: 0,10 µg/L sono 100 ng/L. I laboratori e i gestori usano spesso i nanogrammi, i decreti i microgrammi. Il numero è lo stesso.</p>
+<p>Un valore sotto il parametro significa acqua conforme per quel parametro. Un superamento obbliga il gestore a intervenire (trattamento, cambio di fonte) e, se serve, a limitare l'uso dell'acqua con avviso ai cittadini.</p>
+<h2>Come sapere se riguarda il tuo comune</h2>
+<ul>
+<li>Il sito del tuo gestore idrico pubblica i valori per comune. Dal 2026 tra i parametri deve comparire la "somma di PFAS"; dove è segnalato "&lt; LOQ" o "&lt; LQ" significa sotto il limite di quantificazione del laboratorio, cioè non rilevato.</li>
+<li>Se il tuo gestore non pubblica ancora i PFAS, puoi chiederli per iscritto: l'articolo 18 del D.Lgs. 18/2023 prevede l'informazione al pubblico.</li>
+<li>Chi beve acqua di pozzo privato non è coperto da nessun controllo: in zone con attività industriali, aeroporti o caserme dei vigili del fuoco (schiume antincendio) un'analisi dei PFAS in un laboratorio accreditato è la sola risposta. Serve un laboratorio con limite di quantificazione adeguato ai nuovi parametri.</li>
+</ul>
+<h2>Cosa possono fare i filtri domestici</h2>
+<p>Uno studio della Duke University e della North Carolina State University, pubblicato su Environmental Science &amp; Technology Letters, ha misurato i PFAS prima e dopo 89 filtri domestici. I sistemi a osmosi inversa e quelli a doppio stadio li riducevano in media del 94%; i filtri a carboni attivi (caraffe, filtri da rubinetto, sotto lavello) del 73% in media, ma con una variabilità enorme: alcuni non toglievano nulla, e una cartuccia esaurita può rilasciare quello che ha trattenuto.</p>
+<p>In pratica:</p>
+<ul>
+<li>Se l'acqua di rete è conforme, un filtro per i PFAS non è necessario: il gestore ha già l'obbligo di rispettare il parametro al contatore.</li>
+<li>Se vivi in un'area con superamenti o hai un pozzo con PFAS, l'osmosi inversa è la tecnologia con i risultati più costanti; i carboni attivi funzionano solo con cartucce certificate per i PFAS e cambiate nei tempi indicati.</li>
+<li>Nessun filtro domestico è stato ancora provato in modo affidabile sul TFA, la molecola a catena corta più diffusa.</li>
+<li>L'osmosi inversa toglie anche i sali minerali e scarta una parte dell'acqua: va scelta sapendolo. Il confronto tra caraffe, filtri al rubinetto e depuratori, con prezzi verificati, è in preparazione.</li>
+</ul>
+<h2>Cosa non trovi in questa pagina</h2>
+<p>Non diamo valutazioni sugli effetti dei PFAS sulla salute delle singole persone né consigli su esami del sangue: sono temi del medico, dell'ASL e, nelle aree interessate, dei piani di sorveglianza regionali. Riportiamo i limiti di legge e come controllare l'acqua della propria casa.</p>
+<p class="nota">Le date e i valori di questa pagina vengono dal D.Lgs. 102/2025 e dalla legge di bilancio 2026 come riportati dalle fonti in fondo; le tabelle dell'Allegato I del decreto sono pubblicate in Gazzetta Ufficiale in formato grafico. Se trovi una differenza, scrivici: la correzione viene dichiarata qui sotto.</p>
+""", sources=fonti("aulss9_pfas", "aulss8_pfas", "veneto_pfas_report", "dlgs_18_2023", "dlgs_102_pdf", "greenpeace_rinvio", "fattoalimentare_filtri", "savonanews_pfas"),
+    section="acqua",
+    breve=["I PFAS sono composti industriali che non si degradano: persistenti, mobili nell'acqua, accumulabili negli organismi.",
+           "Dal 13 gennaio 2026 la somma di PFAS nell'acqua potabile ha un limite di 0,10 µg/L; il limite italiano di 0,02 µg/L sui 4 PFAS più studiati è stato rinviato a luglio 2026.",
+           "I valori del tuo comune sono sul sito del gestore. I filtri a osmosi inversa li riducono in modo costante, i carboni attivi solo a volte."],
+    chiave=("0,10", "µg/L", "valore di parametro per la somma di PFAS nell'acqua potabile, obbligatorio dal 13 gennaio 2026"))
 
 # ------------------------------------------------------------- bozze
 add("/bozze/rilevatori-confronto/", "BOZZA: i migliori rilevatori di radon per la casa",
@@ -477,6 +540,12 @@ add("/bozze/risanamento/", "BOZZA: radon alto, come si risana una casa e quanto 
 # ------------------------------------------------------------- news
 # (slug, data ISO, data leggibile, titolo, cosa è successo, cosa cambia per chi legge, [(etichetta fonte, url)])
 NEWS = [
+    ("pfas-liguria-borgio-verezzi-novembre-2026", "2026-11-06", "6 novembre 2026",
+     "PFAS nell'acqua in Liguria: a Borgio Verezzi e Pietra Ligure si lavora ai filtri a carboni attivi",
+     "Il gestore Servizi Ambientali ha confermato il 4 novembre la priorità degli interventi di filtrazione a carboni attivi per ripristinare la potabilità dell'acqua nei Comuni di Borgio Verezzi e Pietra Ligure (Savona), dove sono stati trovati PFAS oltre i limiti. La Regione Liguria ha istituito una cabina di regia e la Procura di Savona ha aperto un fascicolo.",
+     "Chi vive nei due Comuni deve seguire le ordinanze comunali e le comunicazioni del gestore sull'uso dell'acqua. Per tutti gli altri, il caso mostra come funziona la nuova norma: dal 2026 i PFAS sono un parametro di legge e, se superano il limite, il gestore deve intervenire. Cosa sono e come leggere i dati del proprio comune è spiegato nella guida ai PFAS nell'acqua.",
+     [("Savonanews, PFAS nell'acqua, Servizi Ambientali accelera sugli interventi (6 novembre 2026)", "https://www.savonanews.it/2026/11/06/leggi-notizia/argomenti/attualit/articolo/pfas-nellacqua-servizi-ambientali-accelera-sugli-interventi-necessario-il-sostegno-economico-di.html"),
+      ("Casa Respira, PFAS nell'acqua del rubinetto: cosa sono e cosa dice la legge", "https://casarespira.it/acqua/pfas/")]),
     ("bergamo-campagna-radon-ottobre-2026", "2026-09-30", "30 settembre 2026",
      "Bergamo: dal 1° ottobre misura gratuita del radon in nove comuni",
      "ATS Bergamo, con ARPA Lombardia, ha avviato dal 1° ottobre 2026 una campagna gratuita di misura del radon nelle abitazioni di nove comuni della provincia. Ai cittadini che aderiscono viene consegnato un dosimetro passivo da posizionare in casa; la prima misura dura circa sei mesi e al termine ogni partecipante riceve il risultato della propria abitazione.",
