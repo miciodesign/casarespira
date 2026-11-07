@@ -690,6 +690,7 @@ def nav_html(current):
         classes = []
         if current.startswith(href): classes.append("on")
         if href in TEMI: classes.append("t-" + TEMI[href][0])
+        else: classes.append("sec")
         cls = f' class="{" ".join(classes)}"' if classes else ""
         items.append(f'<a href="{href}"{cls}>{esc(label)}</a>')
     return '<nav class="nav" aria-label="Sezioni">' + "".join(items) + "</nav>"
@@ -1002,10 +1003,17 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .brand-text{display:flex;flex-direction:column;line-height:1.1}
 .brand-name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:27px;letter-spacing:-0.01em;color:var(--inchiostro);font-variation-settings:"opsz" 40}
 .brand-pay{font-size:13.5px;color:var(--grigio);margin-top:2px;letter-spacing:0.01em}
-.nav{display:flex;gap:4px;flex-wrap:wrap}
-.nav a{padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--testo);font-size:15.5px}
-.nav a:hover{background:var(--nebbia-chiara);color:var(--inchiostro)}
-.nav a.on{color:var(--inchiostro);box-shadow:inset 0 -2px 0 var(--aria)}
+.nav{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.nav a{padding:10px 13px;border-radius:8px;text-decoration:none;color:var(--inchiostro);font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:20px;letter-spacing:-0.01em;font-variation-settings:"opsz" 24;display:inline-flex;align-items:center;gap:8px;line-height:1}
+.nav a[class*="t-"]::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tema);flex:none;transition:transform .15s}
+.nav a[class*="t-"]:hover::before,.nav a[class*="t-"].on::before{transform:scale(1.35)}
+.nav a:hover{background:var(--nebbia-chiara)}
+.nav a.on{color:var(--inchiostro)}
+.nav a.sec{font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:500;font-size:14.5px;color:var(--grigio);padding:8px 10px;letter-spacing:0.01em}
+.nav a.sec:first-of-type{margin-left:0}
+.nav a.t-acqua{margin-right:14px;position:relative}
+.nav a.t-acqua::after{content:"";position:absolute;right:-9px;top:25%;height:50%;width:1px;background:var(--nebbia)}
+.nav a.sec.on{color:var(--inchiostro);box-shadow:inset 0 -2px 0 var(--inchiostro)}
 
 /* home */
 .hero{background:var(--bianco);border-bottom:1px solid var(--nebbia);padding:56px 0 40px}
@@ -1086,7 +1094,10 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .lista-temi strong{display:block;font-size:17.5px;margin-bottom:6px}
 .lista-temi span{display:block;font-size:15px;color:var(--grigio)}
 .lista-temi em{display:block;font-style:normal;font-size:13.5px;color:var(--aria-scura);margin-top:8px}
-.nav a{padding:8px 10px;font-size:15px}
+.nav a{padding:8px 9px;font-size:17px}
+  .nav a.sec{font-size:13.5px;padding:6px 8px}
+  .nav a.t-acqua{margin-right:0}
+  .nav a.t-acqua::after{display:none}
 
 /* news */
 .lista-news{list-style:none;padding:0;margin:20px 0}
@@ -1113,8 +1124,8 @@ body.tema-muffa{--tema:#5E7A3A;--tema-ch:#EEF3E6}
 body.tema-aria{--tema:#2E7FB8;--tema-ch:#E6F1F9}
 body.tema-ventilazione{--tema:#7A5CB8;--tema-ch:#EFEAF8}
 body.tema-acqua{--tema:#1C8C8C;--tema-ch:#E3F3F3}
-.nav a.on{box-shadow:inset 0 -3px 0 var(--tema,var(--aria))}
-.nav a[class*="t-"]:hover{box-shadow:inset 0 -3px 0 var(--tema);background:var(--tema-ch)}
+.nav a[class*="t-"].on{background:var(--tema-ch)}
+.nav a[class*="t-"]:hover{background:var(--tema-ch)}
 .hero{background:linear-gradient(180deg,#FFFFFF 0%,#F4EEE3 100%);border-bottom:1px solid var(--nebbia);padding:36px 0 0;overflow:hidden}
 .hero-casa svg{margin-bottom:-6px}
 .hero-in{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
