@@ -182,8 +182,8 @@ add("/come-lavoriamo/", "Come lavoriamo",
 <h2>Come ci sosteniamo</h2>
 <p>Casa Respira si mantiene con due tipi di entrate, in quest'ordine di importanza. Le dichiariamo nelle pagine che ne sono toccate.</p>
 <p><strong>Contatti per misura e risanamento.</strong> Chi scopre un valore alto di radon deve spendere per misurare e per risanare. Le imprese e i laboratori che fanno questi lavori pagano per un contatto qualificato. Il modulo "chiedi un preventivo", quando sarà attivo, gira la richiesta a una o tre imprese della zona, che ci pagano per il contatto. Te lo diciamo prima che tu invii i dati, e i dati passano alle imprese solo con il tuo consenso esplicito.</p>
-<p><strong>Affiliazioni.</strong> Alcuni link portano a prodotti venduti da altri. Se compri tramite quei link, riceviamo una commissione. Per te il prezzo non cambia.</p>
-<p>Oggi il programma attivo è quello di Airthings, per i rilevatori di radon e di aria. Altri programmi, per deumidificatori, purificatori e filtri, sono in verifica e non hanno ancora link attivi. Le pagine che contengono link affiliati lo dichiarano in testa.</p>
+<p><strong>Affiliazioni.</strong> Alcuni link portano a prodotti venduti da altri. Se compri tramite quei link o con un nostro codice, riceviamo una commissione. Per te il prezzo non cambia o, dove c'è un codice sconto, scende.</p>
+<p>Oggi il programma attivo è quello di Airthings, per i rilevatori di radon e di aria: il codice <strong>CASARESPIRA-10OFF</strong> dà il 10% di sconto su discount.airthings.com e a noi una commissione. Altri programmi, per deumidificatori, purificatori e filtri, sono in verifica e non hanno ancora link attivi. Le pagine che contengono link affiliati lo dichiarano in testa.</p>
 """, sources=fonti("airthings"), section="fissa")
 
 # ------------------------------------------------------------- radon
@@ -210,6 +210,7 @@ add("/radon/guida-completa/", "Radon in casa: la guida completa",
 <p>Non si sa quanto radon c'è in casa senza una misura. Il dato di riferimento è la media annua, e per questo la misura va fatta per un periodo lungo. Le indicazioni pratiche sono nella guida <a href="/radon/come-si-misura/">Come si misura il radon in casa</a>.</p>
 <h2>Se il valore è alto</h2>
 <p>Il radon si può ridurre. La tecnica più usata negli edifici con platea è la depressurizzazione del suolo: un pozzetto con un tubo e un ventilatore che aspira il gas dal sottosuolo e lo scarica all'esterno, secondo l'ISS. Le altre tecniche e i loro costi saranno trattati in una guida dedicata, in preparazione.</p>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
 <h2>Dove andare dopo</h2>
 <ul>
 <li><a href="/radon/come-si-misura/">Come si misura il radon in casa</a></li>
@@ -236,6 +237,7 @@ add("/radon/come-si-misura/", "Come si misura il radon in casa",
 <li><strong>Dosimetri passivi</strong>: restano nell'ambiente per un periodo di misura, poi vanno analizzati in laboratorio. Sono il metodo più usato per la media annua.</li>
 <li><strong>Rilevatori elettronici</strong>: mostrano l'andamento nel tempo e danno una lettura continua. Sono utili per capire quando il valore sale, ma la lettura va confrontata con una misura di riferimento.</li>
 </ul>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
 <h2>Come fare una misura utile</h2>
 <ul>
 <li>Misura nel piano più frequentato, di solito la zona giorno al piano terra o nel locale abitato più basso.</li>
@@ -370,6 +372,7 @@ add("/aria/qualita-aria-casa/", "La qualità dell'aria in casa: cosa misurare e 
 <li><strong>CO</strong>: un rilevatore con allarme acustico, conforme alla norma EN 50291, nel locale della caldaia o della stufa, con batterie controllate. Non è un monitor di qualità dell'aria: è un allarme.</li>
 </ul>
 <p>Il confronto tra rilevatori di qualità dell'aria, con prezzi verificati, è in preparazione.</p>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
 <h2>Come leggere i numeri</h2>
 <ul>
 <li>Guarda l'andamento, non il singolo valore. Una stanza da letto che la mattina segna 2.000 ppm di CO₂ dice che la notte l'aria non si è ricambiata.</li>
@@ -1023,6 +1026,9 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .sc-unit{font:400 12.5px "IBM Plex Sans",sans-serif;fill:var(--grigio)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
+.aff{background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--tema,var(--ambra));border-radius:8px;padding:14px 18px;margin:22px 0;font-size:15.5px}
+.aff .aff-t{margin:0 0 6px;font-weight:600;color:var(--inchiostro);font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.aff p{margin:0}
 .lista-guide{list-style:none;padding:0;margin:16px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--tema,#C98A00);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
 .lista-guide a:hover{background:var(--tema-ch,#FBFDFE)}
