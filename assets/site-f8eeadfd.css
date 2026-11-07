@@ -58,8 +58,8 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
 .lista-guide{list-style:none;padding:0;margin:16px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid #C98A00;border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
-.lista-guide a:hover{border-left-color:var(--ambra);background:#FBFDFE}
+.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--tema,#C98A00);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
+.lista-guide a:hover{background:var(--tema-ch,#FBFDFE)}
 .lista-guide strong{display:block;font-size:17.5px;margin-bottom:6px}
 .lista-guide span{font-size:15px;color:var(--grigio)}
 .metodo{padding:28px 24px 56px}

@@ -42,19 +42,15 @@ SEZIONI = [
         "Radon alto: come si risana una casa e quanto costa",
         "Radon in Piemonte, Veneto, Lazio e nelle altre regioni"]),
     ("/muffa/", "Muffa e umidità", "Da dove viene la muffa, perché torna, e cosa funziona davvero tra deumidificatori, pitture e interventi.", [
-        "Muffa in casa: da dove viene e come eliminarla davvero",
         "I migliori deumidificatori per la casa (confronto)",
         "Condensa sulle finestre: perché e cosa fare"]),
     ("/aria/", "Aria che respiri", "CO₂, polveri sottili, composti volatili e monossido: cosa misurare, con quali strumenti, e quando serve un purificatore.", [
-        "La qualità dell'aria in casa: cosa misurare e come",
         "I migliori rilevatori di qualità dell'aria (CO₂, polveri)",
         "Purificatori d'aria: servono davvero? Confronto",
         "Monossido di carbonio in casa: rilevatori e caldaie"]),
     ("/ventilazione/", "Ventilazione", "Aprire le finestre bene, e quando conviene una ventilazione meccanica con recupero di calore.", [
-        "Ventilazione meccanica controllata (VMC): come funziona e quanto costa",
-        "Aprire le finestre bene: quanto, quando, in inverno"]),
+        "Ventilazione meccanica controllata (VMC): come funziona e quanto costa"]),
     ("/acqua/", "Acqua di casa", "L'acqua del rubinetto è buona? Calcare, cloro, piombo nei tubi vecchi, pozzi privati, filtri e depuratori.", [
-        "L'acqua del rubinetto è buona? Come saperlo",
         "Calcare nell'acqua: durezza, danni e soluzioni",
         "Caraffa, filtro al rubinetto o depuratore sotto il lavello: confronto",
         "Tubi vecchi e piombo nell'acqua: come capire se riguarda casa tua",
@@ -90,6 +86,28 @@ S = {
                      "https://www.regione.lombardia.it/sanita/prevenzione-e-stili-di-vita/sicurezza-negli-ambienti-di-vita/campagna-monitoraggio-radon-2024-2025"),
     "certifico_lg_lomb": ("Certifico, linee guida regionali lombarde per la prevenzione dal radon, 2ª edizione (dicembre 2025)",
                           "https://www.certifico.com/id/25169"),
+    "minsal_muffe": ("Ministero della Salute, opuscolo Umidità e muffe (2015, PDF, copia su ingenio-web.it)",
+                     "https://www.ingenio-web.it/files/umidita-e-muffe-opuscolo-ministero-della-salute.pdf"),
+    "oms_dampness": ("OMS Europa, WHO guidelines for indoor air quality: dampness and mould (2009, PDF)",
+                     "http://www.euro.who.int/__data/assets/pdf_file/0017/43325/E92645.pdf"),
+    "iss_co2_nota": ("ISS, nota tecnica sul monitoraggio della CO₂ negli ambienti indoor (PDF)",
+                     "https://www.iss.it/documents/20126/6703853/NT_co2_DEF.pdf/"),
+    "istisan_16_15": ("ISS, Rapporto ISTISAN 16/15, Presenza di CO₂ e H₂S in ambienti indoor (PDF)",
+                      "https://www.iss.it/documents/20126/45616/16_15_web.pdf/a9142047-b81d-3e0b-6e6f-10860f855b67?t=1581095582421"),
+    "epicentro_co": ("ISS, EpiCentro, Monossido di carbonio: informazioni generali",
+                     "https://www.epicentro.iss.it/ambiente/monossido-carbonio"),
+    "iss_co_poster": ("ISS, Gruppo di Studio Nazionale Inquinamento Indoor, poster Stop al CO (PDF)",
+                      "https://www.epicentro.iss.it/ambiente/pdf/Monossido%20Carbonio_%20Poster_A3_V2.pdf"),
+    "iss_covid_11": ("ISS, Rapporto ISS COVID-19 n. 11/2021, Indicazioni per la prevenzione e gestione degli ambienti indoor (18 aprile 2021)",
+                     "https://www.iss.it/rapporti-covid-19/-/asset_publisher/btw1J82wtYzH/content/id/5750232"),
+    "enea_faq_vmc": ("ENEA, FAQ Ecobonus, sezione D impianti termici (FAQ 16D sulla ventilazione meccanica controllata)",
+                     "https://www.efficienzaenergetica.enea.it/detrazioni-fiscali/ecobonus/faq-ecobonus/d-impianti-termici-comma-347.html"),
+    "dlgs_18_2023": ("Normattiva, D.Lgs. 23 febbraio 2023, n. 18, qualità delle acque destinate al consumo umano (testo vigente)",
+                     "https://www.normattiva.it/eli/stato/DECRETO_LEGISLATIVO/2023/02/23/18/CONSOLIDATED"),
+    "dlgs_102_2025": ("Normattiva, D.Lgs. 19 giugno 2025, n. 102, correttivo del D.Lgs. 18/2023",
+                      "https://www.normattiva.it/eli/id/2025/07/04/25G00106/CONSOLIDATED/"),
+    "ispra_sintai": ("ISPRA, SINTAI, acque destinate al consumo umano: quadro del D.Lgs. 18/2023",
+                     "https://www.sintai.isprambiente.it/umano/index_dett.html"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -265,6 +283,170 @@ add("/radon/lombardia/", "Radon in Lombardia: aree prioritarie e misure",
            "La media regionale stimata è 100-120 Bq/m³, contro circa 70 in Italia.",
            "Anche fuori dai 90 comuni il radon può essere alto: solo la misura lo dice."],
     chiave=("90", "comuni", "in area prioritaria in Lombardia, prima individuazione del 2023"))
+
+# ------------------------------------------------------------- guide per tema
+add("/muffa/muffa-in-casa/", "Muffa in casa: da dove viene e come eliminarla davvero",
+    "Condensa, infiltrazioni o risalita: come riconoscere la causa della muffa, cosa dice il Ministero della Salute e cosa funziona oltre alla candeggina.",
+    """
+<p>La muffa sui muri è il segno che una superficie è rimasta umida abbastanza a lungo. Pulirla serve, ma se non si toglie l'umidità torna sempre nello stesso punto. Questa guida spiega come capire da dove viene l'acqua e cosa fare in ordine di efficacia.</p>
+<h2>Cos'è la muffa e perché cresce in casa</h2>
+<p>Le muffe sono funghi microscopici. Secondo l'opuscolo del Ministero della Salute dedicato a umidità e muffe, in casa si trovano soprattutto dove c'è umidità in eccesso e poca ventilazione, e crescono più in fretta con temperature miti. Hanno bisogno di tre cose: acqua, una superficie su cui attaccarsi e tempo. Di queste, l'unica su cui si può agire davvero è l'acqua.</p>
+<h2>Le tre cause, e come distinguerle</h2>
+<ul>
+<li><strong>Condensa su superfici fredde.</strong> È la causa più comune. L'aria calda di casa contiene vapore (respiro, cucina, doccia, bucato steso); quando tocca una parete fredda il vapore diventa acqua. Con 20 °C e umidità relativa del 60%, una superficie a circa 12 °C è già bagnata. Succede negli angoli alti delle pareti esterne, dietro gli armadi addossati ai muri perimetrali, intorno alle finestre: i punti in cui l'isolamento è più debole, detti ponti termici. La muffa compare d'inverno e sempre nello stesso posto.</li>
+<li><strong>Infiltrazioni.</strong> Acqua che entra da fuori: tetto, terrazzo, davanzali, tubi che perdono. La macchia segue la pioggia o l'uso di un bagno al piano di sopra, e spesso è umida al tatto anche in estate.</li>
+<li><strong>Risalita dal terreno.</strong> Riguarda piani terra e seminterrati, soprattutto in edifici vecchi. La macchia parte dal pavimento e sale con un fronte orizzontale, spesso con efflorescenze bianche di sali.</li>
+</ul>
+<p>Un igrometro da pochi euro aiuta a capire quale caso è il tuo: se l'umidità relativa in stanza sta spesso sopra il 60%, la condensa è la spiegazione più probabile. Il Ministero della Salute indica di mantenere l'umidità interna sotto il 50%.</p>
+<h2>Cosa consiglia il Ministero della Salute</h2>
+<p>L'opuscolo ministeriale elenca comportamenti concreti. I principali:</p>
+<ul>
+<li>mantenere l'umidità interna sotto il 50%;</li>
+<li>isolare e ventilare muri esterni, fondazioni, sottotetti;</li>
+<li>non lasciare i panni ad asciugare a lungo in ambienti chiusi e poco ventilati;</li>
+<li>non usare tappeti o moquette in bagno, cucina e lavanderia;</li>
+<li>eliminare la condensa arieggiando spesso;</li>
+<li>togliere le macchie con prodotti antimuffa a base d'acqua;</li>
+<li>fare manutenzione a umidificatori, condizionatori e ventilazione meccanica, in particolare bocchette esterne e filtri.</li>
+</ul>
+<h2>Cosa fare, in ordine di efficacia</h2>
+<ol>
+<li><strong>Ridurre il vapore prodotto.</strong> Coperchio sulle pentole, cappa accesa, finestra del bagno aperta dopo la doccia, bucato steso fuori o in una stanza ventilata con la porta chiusa.</li>
+<li><strong>Arieggiare bene.</strong> Pochi minuti, più volte al giorno, con finestre su lati opposti aperte insieme. Come e quando, in <a href="/ventilazione/aprire-le-finestre/">Aprire le finestre bene</a>.</li>
+<li><strong>Riscaldare in modo uniforme.</strong> Una stanza tenuta fredda e chiusa, in una casa riscaldata, è quella dove condensa il vapore delle altre. Scostare i mobili dalle pareti esterne di qualche centimetro lascia circolare l'aria.</li>
+<li><strong>Deumidificatore</strong>, come tampone quando le prime tre misure non bastano o nei periodi più umidi. Riduce l'umidità dell'aria, non ripara un ponte termico. Il confronto tra modelli è in preparazione.</li>
+<li><strong>Intervenire sull'involucro.</strong> Se la muffa torna sempre nello stesso angolo, il problema è una superficie troppo fredda: isolamento del ponte termico, cappotto, sostituzione degli infissi. Per infiltrazioni e risalita serve prima eliminare l'ingresso dell'acqua; nessuna pittura lo fa.</li>
+</ol>
+<h2>Pulire la muffa senza sbagliare</h2>
+<p>Su piccole superfici si pulisce con un prodotto antimuffa, con guanti e finestra aperta, senza spazzolare a secco (le spore si disperdono nell'aria). I prodotti vanno usati uno alla volta: mescolare candeggina e ammoniaca, o candeggina e detergenti acidi, libera gas irritanti. Le pitture antimuffa rallentano la ricomparsa, ma su una parete che resta fredda e umida la muffa torna.</p>
+<h2>Quando chiamare un tecnico</h2>
+<p>Se la muffa copre superfici estese, torna dopo ogni pulizia, o si accompagna a intonaco che si sfalda, serve una diagnosi: una termocamera mostra i ponti termici, un igrometro a contatto misura l'umidità nel muro. In affitto, la muffa da difetti dell'edificio va segnalata per iscritto al proprietario.</p>
+<h2>Muffa e salute</h2>
+<p>Le linee guida dell'OMS del 2009 su umidità e muffe negli edifici concludono che vivere in ambienti umidi o con muffa si associa a più sintomi respiratori e asma. Il Ministero della Salute riprende la stessa indicazione. Questa guida si ferma qui: per sintomi, allergie o dubbi sulla salute, il riferimento è il medico o l'ASL.</p>
+<p class="nota">Questa guida non sostituisce il parere di un tecnico o del medico. Prezzi di deumidificatori e interventi saranno trattati in guide dedicate, dopo la verifica.</p>
+""", sources=fonti("minsal_muffe", "oms_dampness"),
+    section="muffa",
+    breve=["La muffa cresce dove una superficie resta umida: condensa su pareti fredde, infiltrazioni o risalita dal terreno.",
+           "Il Ministero della Salute indica di tenere l'umidità interna sotto il 50% e di arieggiare spesso.",
+           "Pulire serve, ma se non si toglie la causa la muffa torna nello stesso punto."],
+    chiave=("50%", "umidità relativa", "il valore sotto cui il Ministero della Salute consiglia di tenere l'aria di casa per prevenire le muffe"))
+
+add("/aria/qualita-aria-casa/", "La qualità dell'aria in casa: cosa misurare e come",
+    "CO₂, umidità, polveri sottili, composti volatili e monossido di carbonio: quali parametri contano in casa, con quali strumenti si misurano e quali numeri usare come riferimento.",
+    """
+<p>L'aria di casa non si vede, ma si misura. Non tutto però va misurato, e non tutti gli strumenti misurano bene. Questa guida dice quali parametri contano davvero in un'abitazione, quali valori prendere come riferimento e come leggere i numeri senza farsi ingannare.</p>
+<h2>Cinque parametri che contano in casa</h2>
+<h3>Anidride carbonica (CO₂)</h3>
+<p>La CO₂ in sé non è un inquinante pericoloso ai livelli di casa, ma è il miglior indicatore del ricambio d'aria: la producono le persone, e sale quando si sta in tanti in una stanza chiusa. L'Istituto Superiore di Sanità, nel Rapporto ISTISAN 16/15 e nella nota tecnica dedicata, prende come riferimento 1.000 ppm: valori stabilmente sopra questa soglia durante l'occupazione indicano che il ricambio d'aria è insufficiente e va migliorato. All'aperto si sta intorno a 400-500 ppm. L'ISS ricorda anche che la legge italiana non fissa valori limite per l'aria delle abitazioni: 1.000 ppm è un riferimento gestionale, non un limite sanitario.</p>
+<h3>Umidità relativa</h3>
+<p>Troppo alta favorisce muffe e acari, troppo bassa secca le vie respiratorie. Il Ministero della Salute consiglia di tenerla sotto il 50% per prevenire le muffe; il dettaglio è nella guida <a href="/muffa/muffa-in-casa/">Muffa in casa</a>.</p>
+<h3>Polveri sottili (PM10 e PM2,5)</h3>
+<p>Entrano dall'esterno con il traffico e il riscaldamento, ma in casa le produce soprattutto cucinare, in particolare friggere e grigliare, accendere candele, incensi, camini e stufe a legna, e fumare. Per le abitazioni non esistono limiti di legge italiani. Il modo più efficace per abbassarle è alla fonte: cappa aspirante verso l'esterno e ricambio d'aria dopo aver cucinato.</p>
+<h3>Composti organici volatili (COV) e formaldeide</h3>
+<p>Li rilasciano mobili nuovi, vernici, colle, detergenti e profumatori. L'odore di "nuovo" è un indizio. Si riducono scegliendo prodotti a bassa emissione, lasciando arieggiare per giorni ciò che si è appena comprato e non accumulando spray e profumatori.</p>
+<h3>Monossido di carbonio (CO)</h3>
+<p>È l'unico parametro di questa lista che riguarda la sicurezza immediata. Secondo l'ISS, il CO è un gas inodore e incolore prodotto dalla combustione: caldaie, stufe, camini, fornelli, scaldabagni a gas. Le cause principali degli avvelenamenti sono la mancata manutenzione di apparecchi e canne fumarie, una combustione con poco ossigeno e la cattiva evacuazione dei fumi. La prevenzione è la manutenzione periodica fatta da personale abilitato e l'ingresso d'aria libero nei locali con apparecchi a fiamma. Un rilevatore di CO è un'aggiunta utile, non un sostituto della manutenzione. Una guida dedicata è in preparazione.</p>
+<p>Il sesto parametro, il <a href="/radon/">radon</a>, ha una sezione tutta sua: è regolato per legge e si misura in modo diverso.</p>
+<h2>Con cosa si misura</h2>
+<ul>
+<li><strong>CO₂</strong>: serve un sensore a infrarossi (sigla NDIR nelle schede tecniche). I sensori "eCO₂" stimano la CO₂ dai COV e non sono affidabili per questo scopo.</li>
+<li><strong>Umidità e temperatura</strong>: un igrometro digitale da pochi euro basta; vale la pena metterlo nella stanza più fredda.</li>
+<li><strong>Polveri sottili</strong>: i monitor domestici usano un sensore ottico. Sono utili per vedere i picchi (quando si cucina, quando si accende una candela) e la tendenza, meno per il valore assoluto.</li>
+<li><strong>COV</strong>: i sensori domestici danno un indice relativo, non una concentrazione. Vanno letti come "più o meno di prima", non come un numero da confrontare con una soglia.</li>
+<li><strong>CO</strong>: un rilevatore con allarme acustico, conforme alla norma EN 50291, nel locale della caldaia o della stufa, con batterie controllate. Non è un monitor di qualità dell'aria: è un allarme.</li>
+</ul>
+<p>Il confronto tra rilevatori di qualità dell'aria, con prezzi verificati, è in preparazione.</p>
+<h2>Come leggere i numeri</h2>
+<ul>
+<li>Guarda l'andamento, non il singolo valore. Una stanza da letto che la mattina segna 2.000 ppm di CO₂ dice che la notte l'aria non si è ricambiata.</li>
+<li>Collega i picchi alle attività: cucina, doccia, bucato, pulizie, un mobile nuovo.</li>
+<li>Un numero alto non è una diagnosi. Se ti preoccupa la salute, il riferimento è il medico; per la casa, un tecnico.</li>
+</ul>
+<h2>Cosa fare se i valori sono alti</h2>
+<p>Nell'ordine: togliere la fonte (cappa, meno candele, prodotti a bassa emissione), ricambiare l'aria (guida <a href="/ventilazione/aprire-le-finestre/">Aprire le finestre bene</a>), e solo dopo pensare a un apparecchio. Un purificatore con filtro HEPA abbassa le polveri sottili nella stanza in cui sta, ma non toglie CO₂ né monossido: per quelli serve aria esterna. Una guida sui purificatori è in preparazione.</p>
+<p class="nota">Questa guida non sostituisce il parere di un tecnico o del medico. Per sintomi o dubbi sulla salute, rivolgiti al medico o all'ASL. In caso di sospetto avvelenamento da monossido di carbonio, l'ISS indica di rivolgersi subito al pronto soccorso.</p>
+""", sources=fonti("iss_co2_nota", "istisan_16_15", "epicentro_co", "iss_co_poster", "minsal_muffe"),
+    section="aria",
+    breve=["La CO₂ è l'indicatore del ricambio d'aria: l'ISS prende come riferimento 1.000 ppm.",
+           "Polveri sottili e COV si abbassano soprattutto alla fonte: cucina, candele, mobili nuovi, spray.",
+           "Il monossido di carbonio è una questione di sicurezza: manutenzione degli apparecchi a fiamma, poi un rilevatore con allarme."],
+    chiave=("1.000", "ppm di CO₂", "il riferimento ISS: valori stabilmente più alti indicano un ricambio d'aria insufficiente"))
+
+add("/ventilazione/aprire-le-finestre/", "Aprire le finestre bene: quanto, quando, in inverno",
+    "Quanto tenere aperto, a che ora, come fare in inverno senza buttare via calore, e quando ha senso una ventilazione meccanica con recupero di calore.",
+    """
+<p>Arieggiare è la misura più economica per l'aria di casa, e quella che si fa peggio: finestre a ribalta per ore d'inverno, o chiuse per settimane per non disperdere calore. Questa guida riassume cosa indica l'Istituto Superiore di Sanità e come applicarlo in una casa normale.</p>
+<h2>Perché serve ricambiare l'aria</h2>
+<p>In una stanza chiusa si accumulano CO₂, umidità, odori, composti volatili dei materiali e, al piano terra, radon. L'ISS, nei documenti del suo gruppo di lavoro sulla qualità dell'aria indoor, ricorda che molte persone trascurano i ricambi d'aria perché considerano prevalente il comfort termico o il risparmio energetico. Il risultato è aria "già respirata" che gira nella casa senza scambio con l'esterno. Il segnale più semplice è la CO₂: sopra i 1.000 ppm l'ISS considera il ricambio insufficiente (guida <a href="/aria/qualita-aria-casa/">La qualità dell'aria in casa</a>).</p>
+<h2>Come arieggiare: le indicazioni ISS</h2>
+<p>Il Rapporto ISS COVID-19 n. 11/2021, scritto per il contagio ma valido per l'aria di casa in generale, dà indicazioni pratiche:</p>
+<ul>
+<li><strong>pochi minuti, più volte al giorno</strong>, con una ventilazione intermittente e incrociata (finestre su lati opposti aperte insieme), piuttosto che una sola apertura lunga;</li>
+<li>in inverno, quando la differenza di temperatura tra dentro e fuori è grande, bastano pochi minuti per lo stesso ricambio che d'estate richiede tempi più lunghi;</li>
+<li>preferire le finestre che danno sulle strade meno trafficate ed evitare le ore di punta del traffico;</li>
+<li>evitare correnti d'aria e disagio da freddo o caldo durante l'apertura.</li>
+</ul>
+<h2>Tradotto in una giornata</h2>
+<ul>
+<li><strong>Appena svegli</strong>: camera da letto spalancata, insieme a una finestra sul lato opposto della casa. È la stanza con più CO₂ e umidità della casa.</li>
+<li><strong>Dopo doccia, cucina e bucato</strong>: la finestra della stanza interessata, con la porta chiusa, finché lo specchio o i vetri non sono asciutti.</li>
+<li><strong>Prima di dormire</strong>: un ricambio breve in camera.</li>
+<li><strong>Quando si è in tanti</strong>: ospiti a cena, riunione in casa: un'apertura ogni ora o due.</li>
+</ul>
+<h2>In inverno senza sprecare calore</h2>
+<p>Il calore di una casa sta soprattutto nei muri, nei pavimenti e nei mobili, non nell'aria. Un'apertura completa di pochi minuti cambia l'aria ma raffredda poco le superfici, che riscaldano la nuova aria in fretta. Una finestra a ribalta lasciata aperta per ore fa il contrario: raffredda il muro intorno alla finestra, dove poi condensa il vapore, e ricambia l'aria lentamente. Durante l'apertura conviene chiudere i termosifoni della stanza, se hanno valvola termostatica, e riaprirli dopo.</p>
+<h2>Quando conviene la ventilazione meccanica</h2>
+<p>La ventilazione meccanica controllata (VMC) ricambia l'aria in modo continuo e, nei modelli a doppio flusso, recupera il calore dell'aria espulsa per preriscaldare quella in entrata. Ha senso quando arieggiare a mano non basta: case molto isolate dopo una ristrutturazione, stanze con muffa ricorrente, zone rumorose o inquinate dove aprire le finestre è un problema, persone con allergie che vogliono filtrare l'aria in ingresso. L'ENEA, nella FAQ 16D sull'Ecobonus, ammette alle detrazioni per la riqualificazione energetica i soli sistemi di VMC dotati di recupero di calore, quando sono realizzati insieme alla coibentazione dell'involucro o integrati in un impianto di climatizzazione ad aria, con una relazione tecnica che dimostri il risparmio energetico. Le aliquote e le condizioni cambiano con le leggi di bilancio: vanno verificate sul sito dell'Agenzia delle Entrate per l'anno in cui si paga la spesa. Costi di acquisto e installazione saranno trattati in una guida dedicata, dopo la verifica.</p>
+<p>Anche con la VMC, i filtri vanno puliti o sostituiti con la frequenza indicata dal produttore: il Ministero della Salute lo elenca tra le misure contro le muffe.</p>
+<h2>Due errori comuni</h2>
+<ul>
+<li><strong>Chiudere tutto per risparmiare.</strong> L'umidità che non esce condensa sulle pareti fredde, e la muffa che ne segue costa più del calore risparmiato.</li>
+<li><strong>Affidarsi a un purificatore.</strong> Filtra le polveri, ma non toglie CO₂, umidità né radon: quelli escono solo con aria esterna.</li>
+</ul>
+<p class="nota">Questa guida non sostituisce il parere di un tecnico. Per impianti di VMC, un progettista termotecnico dimensiona il sistema sui metri cubi reali della casa.</p>
+""", sources=fonti("iss_covid_11", "iss_co2_nota", "enea_faq_vmc", "minsal_muffe"),
+    section="ventilazione",
+    breve=["L'ISS consiglia aperture brevi, ripetute più volte al giorno, con finestre su lati opposti aperte insieme.",
+           "In inverno bastano pochi minuti: il calore è nei muri e nei mobili, non nell'aria.",
+           "La VMC con recupero di calore ha senso dove arieggiare a mano non basta; le detrazioni richiedono condizioni precise (ENEA, FAQ 16D)."],
+    chiave=("2", "lati opposti", "finestre aperte insieme, pochi minuti più volte al giorno: la ventilazione incrociata indicata dall'ISS"))
+
+add("/acqua/acqua-del-rubinetto/", "L'acqua del rubinetto è buona? Come saperlo",
+    "Chi controlla l'acqua di rete, dove leggere i dati del tuo comune, cosa significano durezza, nitrati, cloro e piombo, e quando ha senso un'analisi privata.",
+    """
+<p>In Italia l'acqua del rubinetto è controllata per legge dalla sorgente al contatore. Se è "buona" dipende da due cose: i valori che il gestore pubblica per il tuo comune e lo stato dei tubi dentro casa, che sono responsabilità tua. Questa guida spiega dove guardare e cosa guardare.</p>
+<h2>Chi controlla, e con quale legge</h2>
+<p>La norma è il D.Lgs. 18/2023, che ha recepito la direttiva europea 2020/2184 ed è in vigore dal 21 marzo 2023; è stato corretto e integrato dal D.Lgs. 102/2025. Il decreto fissa i valori di parametro che l'acqua deve rispettare (Allegato I), prevede i controlli interni del gestore e i controlli esterni delle aziende sanitarie, e introduce la valutazione del rischio lungo tutta la filiera, dalla captazione al rubinetto.</p>
+<p>Fino al punto di consegna, cioè il contatore, risponde il gestore. Dal contatore al rubinetto rispondono il proprietario e, nei condomini, l'amministratore: è il tratto dove contano i tubi vecchi.</p>
+<h2>Dove leggere i valori del tuo comune</h2>
+<p>L'articolo 18 del decreto obbliga a informare il pubblico sulla qualità dell'acqua. In pratica: il sito del gestore idrico (il nome è sulla bolletta) pubblica per ogni comune, spesso per ogni zona, i valori misurati. Molti gestori riportano anche una "etichetta dell'acqua" con i parametri principali. Se non trovi i dati, puoi chiederli al gestore per iscritto.</p>
+<h2>Cosa guardare nei valori</h2>
+<ul>
+<li><strong>Nitrati</strong>: valore di parametro 50 mg/L. Vengono soprattutto dall'agricoltura; nelle reti pubbliche sono monitorati e di solito ben sotto il limite. Contano molto di più nei pozzi privati.</li>
+<li><strong>Durezza</strong>: espressa in gradi francesi (°F), misura calcio e magnesio. Non è un parametro di salute: il D.Lgs. 18/2023 non le assegna un valore di parametro. Dice quanto calcare si deposita in lavatrice, bollitore e caldaia.</li>
+<li><strong>Residuo fisso</strong>: i sali disciolti totali. Alto o basso è una questione di gusto e di uso, non di potabilità.</li>
+<li><strong>Cloro residuo</strong>: il disinfettante che il gestore lascia nell'acqua perché resti sicura nei tubi. Il sapore di cloro non è un difetto di qualità: sparisce lasciando l'acqua in una caraffa aperta in frigorifero per un po'.</li>
+<li><strong>pH</strong>: tra 6,5 e 9,5.</li>
+<li><strong>Piombo</strong>: valore di parametro 10 µg/L, che il decreto abbassa a 5 µg/L dal 12 gennaio 2036. Riguarda gli edifici con tubazioni o raccordi in piombo, in genere costruiti fino ai primi anni Ottanta, soprattutto dopo lunghe ore di acqua ferma nei tubi. Una guida dedicata è in preparazione.</li>
+<li><strong>Parametri microbiologici</strong> (Escherichia coli, enterococchi): devono essere assenti. Un superamento fa scattare provvedimenti del gestore e dell'ASL, con avviso ai cittadini.</li>
+</ul>
+<p>La regola generale: un valore entro il parametro dell'Allegato I significa acqua conforme per quel parametro. Nessun singolo numero "buono" o "cattivo" fuori da questo confronto.</p>
+<h2>Quando ha senso un'analisi privata</h2>
+<ul>
+<li>L'acqua viene da un <strong>pozzo privato</strong>: nessun gestore la controlla, e chi la usa per bere ne è responsabile. Nitrati e batteri sono i primi parametri da verificare.</li>
+<li>L'edificio è <strong>vecchio</strong> e i tubi non sono mai stati sostituiti: piombo e, in condomini con serbatoi, parametri microbiologici.</li>
+<li>Cambiano <strong>colore, odore o sapore</strong> dell'acqua, o compaiono sedimenti, e il gestore non segnala nulla.</li>
+</ul>
+<p>Le analisi vanno fatte da un laboratorio accreditato (norma ISO/IEC 17025): il referto riporta il valore misurato accanto al valore di parametro di legge. Il campione per il piombo va prelevato dal rubinetto usato per bere, di prima mattina, senza far scorrere l'acqua. I costi delle analisi variano per numero di parametri; li pubblicheremo quando verificati.</p>
+<h2>E i filtri?</h2>
+<p>Per un'acqua di rete conforme, un filtro non serve alla potabilità: serve al gusto (cloro) o al calcare (durezza). Caraffe, filtri al rubinetto e depuratori sotto il lavello fanno cose diverse e hanno costi di gestione diversi: il confronto è in una guida in preparazione. Un apparecchio non mantenuto, con cartucce scadute, peggiora l'acqua invece di migliorarla.</p>
+<p class="nota">Questa guida non sostituisce il parere di un tecnico né del medico. Per avvisi di non potabilità vale sempre la comunicazione del gestore e del Comune.</p>
+""", sources=fonti("dlgs_18_2023", "dlgs_102_2025", "ispra_sintai"),
+    section="acqua",
+    breve=["L'acqua di rete è controllata dal gestore e dalle ASL secondo il D.Lgs. 18/2023; dal contatore in poi rispondono proprietario e condominio.",
+           "I valori del tuo comune sono sul sito del gestore: nitrati 50 mg/L, piombo 10 µg/L (5 dal 2036), pH 6,5-9,5; durezza e cloro riguardano calcare e gusto.",
+           "Un'analisi privata ha senso con pozzo, tubi vecchi o cambiamenti di odore e sapore; va fatta da un laboratorio accreditato."],
+    chiave=("50", "mg/L", "valore di parametro dei nitrati nell'acqua potabile (D.Lgs. 18/2023, Allegato I)"))
 
 # ------------------------------------------------------------- bozze
 add("/bozze/rilevatori-confronto/", "BOZZA: i migliori rilevatori di radon per la casa",
@@ -482,6 +664,9 @@ FOOTER = """<footer class="foot">
 </footer>"""
 
 
+TEMI_NOMI = [v[0] for v in TEMI.values()]
+
+
 def tema_di(path):
     for k, v in TEMI.items():
         if path.startswith(k): return v[0]
@@ -491,7 +676,7 @@ def tema_di(path):
 def render_page(p):
     body, toc = add_ids(p["body"])
     noindex = p["status"] == "draft"
-    is_guide = p["section"] == "radon"
+    is_guide = p["section"] in TEMI_NOMI
 
     aside = ""
     if is_guide:
@@ -546,14 +731,15 @@ def render_page(p):
 """
 
 
-def render_sezione(path, nome, lead, previste, radon):
-    pubblicate = [p for p in radon] if path == "/radon/" else []
+def render_sezione(path, nome, lead, previste, guide):
+    pubblicate = [p for p in guide if p["section"] == tema_di(path)]
     pub_html = ""
     if pubblicate:
         lis = "".join(f'<li><a href="{p["path"]}"><strong>{esc(p["title"])}</strong><span>{esc(p["desc"])}</span></a></li>' for p in pubblicate)
         pub_html = f'<h2>Le guide pubblicate</h2><ul class="lista-guide">{lis}</ul>'
     prev = "".join(f"<li>{esc(t)}</li>" for t in previste)
     titolo_prev = "In preparazione" if pubblicate else "Le guide in preparazione"
+    prev_html = f'<h2>{titolo_prev}</h2><ul class="previste">{prev}</ul>' if previste else ''
     intro_vuota = "" if pubblicate else '<p>Questa sezione non ha ancora guide pubblicate. Le prime escono nelle prossime settimane, una alla volta, con le stesse regole delle altre: fonti istituzionali con link e data, prezzi verificati, correzioni dichiarate.</p>'
     return f"""<!DOCTYPE html>
 <html lang="it">
@@ -571,8 +757,7 @@ def render_sezione(path, nome, lead, previste, radon):
 <p class="lead">{esc(lead)}</p></div><figure class="sezione-casa">{casa_svg(tema_di(path))}</figure></div>
 {intro_vuota}
 {pub_html}
-<h2>{titolo_prev}</h2>
-<ul class="previste">{prev}</ul>
+{prev_html}
 <p class="nota">Per ricevere le nuove guide: <a href="/feed.xml">feed RSS</a>.</p>
 </article>
 </main>
@@ -641,13 +826,18 @@ def render_news_index():
 """
 
 
-def render_home(radon):
+def render_home(guide_tutte):
+    radon = [p for p in guide_tutte if p["section"] == "radon"]
     guide = "".join(
         f'<li><a href="{p["path"]}"><strong>{esc(p["title"])}</strong><span>{esc(p["desc"])}</span></a></li>'
         for p in radon)
     ultime = "".join(f'<li><time datetime="{n[1]}">{esc(n[2])}</time><a href="/news/{n[0]}/">{esc(n[3])}</a></li>' for n in NEWS[:3])
+    def conta(path, prev):
+        n = len([p for p in guide_tutte if p["section"] == TEMI[path][0]])
+        pub = f"{n} guida pubblicata" if n == 1 else f"{n} guide pubblicate"
+        return pub + (f" · {len(prev)} in preparazione" if prev else "")
     temi = "".join(
-        f'<li class="t-{TEMI[path][0]}"><a href="{path}"><strong>{esc(nome)}</strong><span>{esc(lead)}</span><em>{len(prev)} guide in preparazione</em></a></li>'
+        f'<li class="t-{TEMI[path][0]}"><a href="{path}"><strong>{esc(nome)}</strong><span>{esc(lead)}</span><em>{conta(path, prev)}</em></a></li>'
         for path, nome, lead, prev in SEZIONI if path != "/radon/")
     return f"""<!DOCTYPE html>
 <html lang="it">
@@ -681,7 +871,7 @@ def render_home(radon):
 <section class="wrap temi">
 <h2>Gli altri temi</h2>
 <ul class="lista-temi">{temi}</ul>
-<p class="nota">Le sezioni senza guide si riempiono nelle prossime settimane, una pagina alla volta. Le nuove pagine escono nel <a href="/feed.xml">feed RSS</a>.</p>
+<p class="nota">Ogni sezione cresce una pagina alla volta. Le nuove guide escono nel <a href="/feed.xml">feed RSS</a>.</p>
 </section>
 <section class="wrap ultime">
 <h2>Ultime notizie</h2>
@@ -765,8 +955,8 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
 .lista-guide{list-style:none;padding:0;margin:16px 0 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid #C98A00;border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
-.lista-guide a:hover{border-left-color:var(--ambra);background:#FBFDFE}
+.lista-guide a{display:block;background:var(--bianco);border:1px solid var(--nebbia);border-left:4px solid var(--tema,#C98A00);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--testo);height:100%}
+.lista-guide a:hover{background:var(--tema-ch,#FBFDFE)}
 .lista-guide strong{display:block;font-size:17.5px;margin-bottom:6px}
 .lista-guide span{font-size:15px;color:var(--grigio)}
 .metodo{padding:28px 24px 56px}
@@ -926,7 +1116,7 @@ def build():
     write(OUT, f"/assets/site-{cssv}.css", CSS)
 
     live = [p for p in PAGES if p["status"] == "live"]
-    radon = [p for p in live if p["section"] == "radon"]
+    guide_tutte = [p for p in live if p["section"] in TEMI_NOMI]
 
     for p in PAGES:
         base = OUT if p["status"] == "live" else OUT_BOZZE
@@ -935,12 +1125,12 @@ def build():
     if os.path.isdir(OUT_BOZZE):
         shutil.copytree(os.path.join(OUT, "assets"), os.path.join(OUT_BOZZE, "assets"), dirs_exist_ok=True)
 
-    write(OUT, "/index.html", render_home(radon))
+    write(OUT, "/index.html", render_home(guide_tutte))
     write(OUT, "/news/index.html", render_news_index())
     for n in NEWS:
         write(OUT, f"/news/{n[0]}/index.html", render_news_item(n))
     for path, nome, lead, prev in SEZIONI:
-        write(OUT, path + "index.html", render_sezione(path, nome, lead, prev, radon))
+        write(OUT, path + "index.html", render_sezione(path, nome, lead, prev, guide_tutte))
 
     from email.utils import format_datetime
     from datetime import datetime, timezone, timedelta
@@ -958,7 +1148,7 @@ def build():
 <guid isPermaLink="true">{SITE}{p['path']}</guid>
 <pubDate>{p['pubdate']}</pubDate>
 <description>{esc(p['desc'])}</description>
-</item>""" for p in radon)
+</item>""" for p in guide_tutte)
     write(OUT, "/feed.xml", f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
