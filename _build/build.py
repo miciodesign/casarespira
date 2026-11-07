@@ -130,6 +130,8 @@ S = {
                       "https://www.radon.it/site/download/ddg_lombardia_12678_21-12-2011.pdf"),
     "ediltecnico_2025": ("Ediltecnico, Gas radon: cosa cambia per le nuove costruzioni dal 1° gennaio 2025",
                          "https://ediltecnico.it/gas-radon-cosa-cambia-nuove-costruzioni-dal-1-gennaio-2025/"),
+    "inail_radon": ("INAIL, Prevenzione e protezione dall'esposizione al radon nei luoghi di lavoro secondo la normativa vigente (PDF, copia su lavoripubblici.it)",
+                    "https://lavoripubblici.it/documenti2024/lvpb2/inail-rischio-radon-luoghi-lavoro.pdf"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -143,11 +145,11 @@ PAGES = []
 
 
 def add(path, title, desc, body, sources=(), status="live", section=None,
-        breve=None, chiave=None, scala=False):
+        breve=None, chiave=None, scala=False, lang="it"):
     PAGES.append(dict(path=path, title=title, desc=desc, body=body,
                       sources=list(sources), status=status, section=section,
                       breve=breve or [], chiave=chiave, scala=scala,
-                      pubdate=PUB_RFC822))
+                      pubdate=PUB_RFC822, lang=lang))
 
 
 # ------------------------------------------------------------- pagine fisse
@@ -607,6 +609,102 @@ add("/acqua/pfas/", "PFAS nell'acqua del rubinetto: cosa sono, dove si trovano e
            "I valori del tuo comune sono sul sito del gestore. I filtri a osmosi inversa li riducono in modo costante, i carboni attivi solo a volte."],
     chiave=("0,10", "µg/L", "valore di parametro per la somma di PFAS nell'acqua potabile, obbligatorio dal 13 gennaio 2026"))
 
+# ------------------------------------------------------------- English section
+add("/en/", "Indoor air and water in Italy: guides in English",
+    "Casa Respira in English: radon, water quality and indoor-air rules in Italy, for foreign home buyers, tenants and property investors.",
+    """
+<p>Casa Respira is an independent Italian guide to the air and water inside homes. Most of it is written in Italian, for Italian readers. These pages are the exception: short, sourced guides in English for people who buy, rent or invest in property in Italy and need to understand the Italian rules.</p>
+<ul class="lista-guide">
+<li><a href="/en/radon-in-italy/"><strong>Radon in Italy: what foreign home buyers and tenants should know</strong><span>Legal reference levels, priority areas, why the seller is not required to test, and how to get a measurement before you sign.</span></a></li>
+<li><a href="/en/property-due-diligence/"><strong>Air and water due diligence for property in Italy</strong><span>For investors and funds: mandatory radon testing in workplaces, drinking-water rules in buildings, mould and ground-floor construction.</span></a></li>
+</ul>
+<h2>How these pages are written</h2>
+<p>Same method as the Italian site: every figure comes from an institutional source (Italian law, the National Institute of Health, regional environmental agencies) with a link and a date; no prices unless verified; corrections are declared on the page. We do not give medical advice. Where a topic has a full Italian guide, we link to it.</p>
+<p>The Italian site starts at <a href="/">casarespira.it</a>.</p>
+""", section="en", lang="en")
+
+add("/en/radon-in-italy/", "Radon in Italy: what foreign home buyers and tenants should know",
+    "Italian radon reference levels (300 and 200 Bq/m³), priority areas by region, why sellers are not required to test, and how to get a proper measurement before buying or renting.",
+    """
+<p>Radon is a naturally occurring radioactive gas that rises from the ground and collects in basements and ground floors. Italy's estimated national average is around 70 Bq/m³, with wide regional variation (100-120 in Lombardy, according to a 2025 ATS Brescia presentation); it has a specific law, and no obligation for a seller or landlord to test. If you are buying a farmhouse in Piedmont, a flat in Milan or a villa on a lake, this is what you need to know.</p>
+<h2>The legal reference levels</h2>
+<p>Italian Legislative Decree 101/2020, which implements the Euratom directive 2013/59, sets reference levels for the annual average radon concentration in air (article 12):</p>
+<ul>
+<li><strong>300 Bq/m³</strong> for existing homes and for workplaces;</li>
+<li><strong>200 Bq/m³</strong> for homes built under permits issued after 31 December 2024.</li>
+</ul>
+<p>The World Health Organization recommends 100 Bq/m³. A reference level is not a safety threshold: above it, the law expects remediation; below it, lower is still better.</p>
+<h2>Priority areas</h2>
+<p>Article 11 of the decree asks each region to identify "priority areas": municipalities where more than 15% of buildings are estimated to exceed 300 Bq/m³. The National Radon Action Plan 2023-2032 (approved in January 2024) set the method. Lombardy was first, with 90 municipalities; by early 2026 several regions had published their lists (Lombardy, Liguria, Aosta Valley, the autonomous provinces of Bolzano and Trento, among others), for a total of several hundred municipalities. Lists are updated: check the region's or the regional environmental agency's (ARPA) website for the municipality you are looking at. Our Italian page on <a href="/radon/lombardia/">Lombardy</a> explains how the areas were chosen.</p>
+<p>Being outside a priority area does not mean low radon. ARPA Lombardy says it plainly: high concentrations are found outside the mapped municipalities too. Only a measurement tells you.</p>
+<h2>Why the seller will not tell you</h2>
+<p>Italian law does not require a private seller or landlord to measure radon or to disclose a measurement. The energy performance certificate (APE) that every sale and lease must include says nothing about radon. Radon clauses in preliminary contracts are rare. So the burden is on you, and the time to act is before the deed (rogito), not after.</p>
+<h2>How to get a measurement</h2>
+<ul>
+<li><strong>What counts is the annual average.</strong> A reading taken in one afternoon with a consumer device is not a legal measurement. The reference method is a passive detector left in place for months and analysed by a laboratory.</li>
+<li><strong>Who does it.</strong> A recognised dosimetry service or an ARPA-type laboratory. Ask for a report that states the measurement period, the room, the floor and the method (the technical standard is UNI ISO 11665-8).</li>
+<li><strong>Timing for a purchase.</strong> If you have months before the deed, place detectors now; a winter measurement of at least three months is far more informative than nothing. If you have weeks, an electronic monitor gives you a trend and a first warning, and you can write a radon condition into the preliminary contract, with a price adjustment or a right to withdraw above an agreed level.</li>
+<li><strong>Where to measure.</strong> The lowest lived-in floor, with the house used normally, windows closed as in daily life.</li>
+</ul>
+<p>Our Italian guide <a href="/radon/come-si-misura/">Come si misura il radon</a> has the details; the <a href="/radon/guida-completa/">full guide</a> covers remediation.</p>
+<h2>If the result is high</h2>
+<p>Radon can be reduced. The most common technique in houses on a concrete slab is soil depressurisation: a sump under or beside the building with a fan that draws the gas from the ground and vents it outside. Costs depend on the building; we publish them only when verified. For new builds, Italian regional guidelines recommend a ventilated crawl space (vespaio aerato) with a radon membrane and a passive sump that can take a fan later; see our page on the <a href="/radon/vespaio-aerato/">vespaio aerato</a> (in Italian).</p>
+<h2>Questions to ask your notary, surveyor or agent</h2>
+<ul>
+<li>Is the municipality in a regional radon priority area?</li>
+<li>Has the property ever been measured? Can I see the report?</li>
+<li>Does the ground floor sit on a ventilated crawl space, a slab on grade, or a basement?</li>
+<li>If the building was permitted after 31 December 2024: what radon-proofing was designed in?</li>
+<li>Can we add a radon condition to the preliminary contract (compromesso)?</li>
+</ul>
+<p class="nota">This page describes the Italian rules as published; it is not legal, technical or medical advice. For a specific property, rely on a qualified surveyor (geometra or engineer) and, for health questions, on a doctor.</p>
+""", sources=fonti("certifico_9941", "dpcm_2024", "arpa_lomb_rusconi", "ats_brescia_2025", "iss_epicentro", "iss_riduzione", "lomb_lg_2025"),
+    section="en", lang="en",
+    breve=["Italy sets 300 Bq/m³ (existing homes) and 200 Bq/m³ (homes permitted after 2024) as annual-average reference levels; the WHO recommends 100.",
+           "Sellers and landlords are not required to test or disclose radon: test before the deed, with a laboratory measurement of several months.",
+           "Priority areas are published by each region, but high radon is found outside them too."],
+    chiave=("300", "Bq/m³", "reference level for existing homes in Italy, annual average (Legislative Decree 101/2020, art. 12)"))
+
+add("/en/property-due-diligence/", "Air and water due diligence for property in Italy",
+    "What investors, funds and asset managers should check in Italian buildings: mandatory radon testing in workplaces, drinking-water obligations under Decree 18/2023, mould, ventilation and ground-floor construction.",
+    """
+<p>Environmental due diligence on Italian property usually covers soil, asbestos and energy performance. Two items are often missed because the rules are recent: radon in workplaces, which became a legal obligation for employers with Legislative Decree 101/2020, and drinking water inside buildings, reorganised by Legislative Decree 18/2023. This page lists what to check and where the obligations sit.</p>
+<h2>Radon: where testing is mandatory</h2>
+<p>Article 16 of Decree 101/2020 applies the radon rules to these workplaces:</p>
+<ul>
+<li>underground workplaces (rooms with at least three walls fully below ground);</li>
+<li>workplaces in semi-basements or on the ground floor located in a regional <strong>priority area</strong>;</li>
+<li>specific activities listed by the National Radon Action Plan (for example water treatment plants with open tanks, mineral-water bottling, hydroelectric plants);</li>
+<li>spas.</li>
+</ul>
+<p>Article 17 puts the obligation on the operator (esercente, in practice the employer or occupier): complete a measurement of the annual average concentration within 24 months of starting the activity, or, for ground-floor premises in a priority area, within 18 months of the area being published in the Official Gazette. The measurement must be done by a recognised dosimetry service and becomes part of the risk assessment document under the health-and-safety code. Above 300 Bq/m³ the operator must reduce the concentration within two years with a certified radon remediation expert, then re-measure. INAIL, the national accident insurance institute, has published a guide for employers.</p>
+<p><strong>What this means for an acquisition.</strong> If the asset has ground-floor or basement space used as workplaces, in a priority area or in one of the listed activities, ask for the radon measurement reports and the risk assessment. Their absence is a compliance gap and a possible capital expense; a result above 300 Bq/m³ is a remediation obligation that transfers with the occupier. Priority-area lists are regional and still being completed: the regional environmental agency (ARPA) is the source.</p>
+<h2>Drinking water inside buildings</h2>
+<p>Decree 18/2023, implementing EU directive 2020/2184, moved from end-of-pipe compliance to risk management along the whole supply chain. The water utility is responsible up to the meter; from the meter to the tap, responsibility lies with the owner or the building manager. Two points matter for buildings:</p>
+<ul>
+<li><strong>Priority buildings</strong> (hospitals, care homes, hotels, schools, sports facilities, large public buildings and similar) must assess and manage the risk of their internal distribution systems, with specific attention to Legionella and lead.</li>
+<li><strong>Lead.</strong> The parameter value is 10 µg/L today and drops to 5 µg/L on 12 January 2036. Buildings with lead pipes or fittings, typically built up to the early 1980s, will need pipe replacement to comply. Ask for the age and material of risers and a recent analysis at the tap.</li>
+</ul>
+<p>PFAS limits also apply at the tap from 2026 (sum of PFAS 0.10 µg/L); they concern the utility's water, but in areas with known contamination (parts of Veneto, and in 2026 a case in Liguria) they affect how a building is supplied. Our Italian guides on <a href="/acqua/acqua-del-rubinetto/">tap water</a> and <a href="/acqua/pfas/">PFAS</a> have the details.</p>
+<h2>Mould, damp and ventilation</h2>
+<p>Italy has no indoor air-quality limits for private buildings, but the National Institute of Health (ISS) uses 1,000 ppm of CO₂ as the threshold above which ventilation is insufficient, and the Ministry of Health recommends keeping indoor relative humidity below 50% to prevent mould. For a portfolio, the practical checks are: evidence of mould or rising damp on ground floors; whether the ground floor sits on a ventilated crawl space (vespaio aerato) or a slab in contact with the ground; and, in buildings renovated for energy efficiency, whether ventilation was addressed, because tighter envelopes without ventilation are the typical cause of new mould problems. Mechanical ventilation with heat recovery qualifies for energy tax deductions only under conditions set by ENEA.</p>
+<h2>A checklist</h2>
+<ol>
+<li>Municipality in a regional radon priority area? (ARPA)</li>
+<li>Any underground, semi-basement or ground-floor workplaces? Radon reports and risk assessment available?</li>
+<li>Building type under Decree 18/2023: priority building? Water risk assessment done?</li>
+<li>Age and material of water risers; last analysis at the tap (lead, Legionella where relevant).</li>
+<li>Ground-floor construction: crawl space, slab, basement; radon membrane in new builds.</li>
+<li>Visible mould or damp; ventilation strategy after any energy retrofit.</li>
+</ol>
+<p class="nota">This page summarises Italian rules as published and is not legal or technical advice. Obligations depend on the use, the location and the region; engage an Italian environmental consultant and a qualified radiation-protection or radon expert for a specific asset.</p>
+""", sources=fonti("certifico_9941", "remetti", "inail_radon", "dlgs_18_2023", "dlgs_102_2025", "iss_co2_nota", "minsal_muffe", "enea_faq_vmc"),
+    section="en", lang="en",
+    breve=["Radon testing is mandatory in underground workplaces, in ground-floor and semi-basement workplaces inside regional priority areas, and in listed activities (Decree 101/2020, art. 16-17).",
+           "Water inside buildings is the owner's responsibility from the meter; lead drops to 5 µg/L in 2036 and priority buildings must manage Legionella and lead risk (Decree 18/2023).",
+           "Mould and ventilation: no legal limits in private buildings, but ISS and Ministry of Health benchmarks exist (1,000 ppm CO₂, 50% humidity)."],
+    chiave=("24", "months", "deadline for the operator to complete a radon measurement in a workplace covered by the decree"))
+
 # ------------------------------------------------------------- bozze
 add("/bozze/rilevatori-confronto/", "BOZZA: i migliori rilevatori di radon per la casa",
     "Bozza. Pagina in attesa di prezzi verificati.",
@@ -813,7 +911,24 @@ def og(titolo, desc, path, slug):
 """
 
 
-def header(current):
+EN_NAV = [("/en/", "English guides"), ("/en/radon-in-italy/", "Radon in Italy"), ("/en/property-due-diligence/", "Due diligence")]
+DATA_EN = "6 November 2026"
+
+
+def nav_html_en(current):
+    items = "".join(f'<a href="{h}" class="sec{" on" if current == h else ""}">{esc(l)}</a>' for h, l in EN_NAV)
+    items += '<a href="/" class="sec" lang="it">Italiano →</a>'
+    return '<nav class="nav" aria-label="Sections">' + items + "</nav>"
+
+
+def header(current, lang="it"):
+    if lang == "en":
+        return f"""<header class="top">
+<div class="wrap top-in">
+<a class="brand" href="/en/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 120 120" width="44" height="44"><rect width="120" height="120" rx="26" fill="#16222E"/><path d="M24 78 A36 36 0 0 1 96 78" fill="none" stroke="#2E7FB8" stroke-width="10" stroke-linecap="round"/><path d="M40 78 A20 20 0 0 1 80 78" fill="none" stroke="#2E7FB8" stroke-width="7" stroke-linecap="round" opacity=".5"/><rect x="28" y="84" width="64" height="10" rx="5" fill="#C98A00"/><circle cx="60" cy="66" r="6" fill="#C98A00"/></svg></span><span class="brand-text"><span class="brand-name">Casa Respira</span><span class="brand-pay">indoor air and water in Italy, measured and explained</span></span></a>
+{nav_html_en(current)}
+</div>
+</header>"""
     return f"""<header class="top">
 <div class="wrap top-in">
 <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 120 120" width="44" height="44"><rect width="120" height="120" rx="26" fill="#16222E"/><path d="M24 78 A36 36 0 0 1 96 78" fill="none" stroke="#2E7FB8" stroke-width="10" stroke-linecap="round"/><path d="M40 78 A20 20 0 0 1 80 78" fill="none" stroke="#2E7FB8" stroke-width="7" stroke-linecap="round" opacity=".5"/><rect x="28" y="84" width="64" height="10" rx="5" fill="#C98A00"/><circle cx="60" cy="66" r="6" fill="#C98A00"/></svg></span><span class="brand-text"><span class="brand-name">Casa Respira</span><span class="brand-pay">aria e acqua di casa, misurate e spiegate</span></span></a>
@@ -822,10 +937,17 @@ def header(current):
 </header>"""
 
 
+FOOTER_EN = """<footer class="foot">
+<div class="wrap">
+<p>Casa Respira is an independent Italian guide to indoor air and water. No bylines: texts are by the editorial staff. Some links are affiliate links, as explained (in Italian) in <a href="/come-lavoriamo/#come-ci-sosteniamo">Come lavoriamo</a>. It does not replace the advice of a technician or a doctor.</p>
+<p><a href="/en/">English guides</a> · <a href="/">Italiano</a> · <a href="/feed.xml">RSS</a></p>
+</div>
+</footer>"""
+
 FOOTER = """<footer class="foot">
 <div class="wrap">
 <p>Casa Respira è una guida indipendente su aria e acqua dentro casa. Nessuna firma: i testi sono della redazione. Alcuni link sono affiliati, come spiegato in <a href="/come-lavoriamo/#come-ci-sosteniamo">Come lavoriamo</a>. Non sostituisce il parere di un tecnico o del medico.</p>
-<p><a href="/feed.xml">Feed RSS</a> · <a href="/chi-siamo/">Chi siamo</a> · <a href="/come-lavoriamo/">Come lavoriamo</a> · <a href="/come-lavoriamo/#come-ci-sosteniamo">Come ci sosteniamo</a></p>
+<p><a href="/feed.xml">Feed RSS</a> · <a href="/chi-siamo/">Chi siamo</a> · <a href="/come-lavoriamo/">Come lavoriamo</a> · <a href="/come-lavoriamo/#come-ci-sosteniamo">Come ci sosteniamo</a> · <a href="/en/" lang="en">English guides</a></p>
 </div>
 </footer>"""
 
@@ -839,10 +961,24 @@ def tema_di(path):
     return ""
 
 
+HREFLANG = {"/en/": "/", "/en/radon-in-italy/": "/radon/guida-completa/", "/en/property-due-diligence/": "/radon/normativa/"}
+HREFLANG_IT = {v: k for k, v in HREFLANG.items()}
+
+
+def hreflang(path):
+    if path in HREFLANG:
+        return f'<link rel="alternate" hreflang="it" href="{SITE}{HREFLANG[path]}">\n<link rel="alternate" hreflang="en" href="{SITE}{path}">\n'
+    if path in HREFLANG_IT:
+        return f'<link rel="alternate" hreflang="en" href="{SITE}{HREFLANG_IT[path]}">\n<link rel="alternate" hreflang="it" href="{SITE}{path}">\n'
+    return ""
+
+
 def render_page(p):
     body, toc = add_ids(p["body"])
     noindex = p["status"] == "draft"
-    is_guide = p["section"] in TEMI_NOMI
+    en = p.get("lang") == "it" and False or p.get("lang") == "en"
+    is_guide = p["section"] in TEMI_NOMI or (en and p["chiave"] is not None)
+    T = dict(indice="On this page", breve="In short", fonti="Sources", link="Links checked on", verif="Sources checked on", corr="Corrections", nocorr="No corrections so far.", data=DATA_EN) if en else dict(indice="In questa pagina", breve="In breve", fonti="Fonti", link="Link controllati il", verif="Fonti verificate il", corr="Correzioni", nocorr="Nessuna correzione finora.", data=DATA_ULTIMA_VERIFICA)
 
     aside = ""
     if is_guide:
@@ -852,46 +988,46 @@ def render_page(p):
             parts.append(f'<div class="chiave"><span class="chiave-n">{esc(n)}</span><span class="chiave-u">{esc(u)}</span><p>{esc(d)}</p></div>')
         if toc:
             lis = "".join(f'<li><a href="#{i}">{esc(t)}</a></li>' for i, t in toc)
-            parts.append(f'<nav class="indice" aria-label="In questa pagina"><p class="indice-t">In questa pagina</p><ol>{lis}</ol></nav>')
+            parts.append(f'<nav class="indice" aria-label="{T["indice"]}"><p class="indice-t">{T["indice"]}</p><ol>{lis}</ol></nav>')
         aside = '<aside class="lato">' + "".join(parts) + "</aside>"
 
     breve = ""
     if p["breve"]:
         lis = "".join(f"<li>{esc(b)}</li>" for b in p["breve"])
-        breve = f'<div class="breve"><p class="breve-t">In breve</p><ul>{lis}</ul></div>'
+        breve = f'<div class="breve"><p class="breve-t">{T["breve"]}</p><ul>{lis}</ul></div>'
 
     scala = f'<figure class="scala-box">{scala_svg()}<figcaption>Livelli di riferimento del D.Lgs. 101/2020 e raccomandazione OMS. Oltre il livello della tua casa, si interviene.</figcaption></figure>' if p["scala"] else ""
 
     fonti_html = ""
     if p["sources"]:
         lis = "".join(f'<li><a href="{esc(u)}" rel="nofollow noopener">{esc(l)}</a></li>' for l, u in p["sources"])
-        fonti_html = f'<section class="fonti" id="fonti"><h2>Fonti</h2><ul>{lis}</ul><p class="nota">Link controllati il {DATA_ULTIMA_VERIFICA}.</p></section>'
+        fonti_html = f'<section class="fonti" id="fonti"><h2>{T["fonti"]}</h2><ul>{lis}</ul><p class="nota">{T["link"]} {T["data"]}.</p></section>'
 
     layout_cls = "pagina pagina-guida" if is_guide else "pagina"
     return f"""<!DOCTYPE html>
-<html lang="it">
+<html lang="{'en' if en else 'it'}">
 <head>
 {HEAD_COMMON}<title>{esc(p['title'])} | Casa Respira</title>
 <meta name="description" content="{esc(p['desc'])}">
 <link rel="canonical" href="{SITE}{p['path']}">
-{og(p['title'], p['desc'], p['path'], p['path'].strip('/').replace('/', '-'))}{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+{hreflang(p['path'])}{og(p['title'], p['desc'], p['path'], p['path'].strip('/').replace('/', '-') or 'home')}{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
-<body class="tema-{tema_di(p['path'])}">
-{header(p['path'])}
+<body class="tema-{'radon' if en else tema_di(p['path'])}">
+{header(p['path'], 'en' if en else 'it')}
 <main class="wrap {layout_cls}">
 <article class="testo">
-<p class="verifica">Fonti verificate il {DATA_ULTIMA_VERIFICA}</p>
+<p class="verifica">{T["verif"]} {T["data"]}</p>
 <h1>{esc(p['title'])}</h1>
 {breve}
 {scala}
 {body}
 {fonti_html}
-<section class="correzioni"><h2>Correzioni</h2><p>Nessuna correzione finora.</p></section>
+<section class="correzioni"><h2>{T["corr"]}</h2><p>{T["nocorr"]}</p></section>
 </article>
 {aside}
 </main>
-{FOOTER}
+{FOOTER_EN if en else FOOTER}
 </body>
 </html>
 """
@@ -1011,7 +1147,7 @@ def render_home(guide_tutte):
 {HEAD_COMMON}<title>Casa Respira | Aria e acqua di casa, misurate e spiegate</title>
 <meta name="description" content="Guida indipendente su aria e acqua dentro casa. Il radon è il tema di partenza: livelli di legge, come si misura, come si riduce.">
 <link rel="canonical" href="{SITE}/">
-{og("Casa Respira | Aria e acqua di casa, misurate e spiegate", "Guida indipendente su aria e acqua dentro casa. Radon, muffa, aria, ventilazione e acqua, spiegati con i numeri delle fonti pubbliche.", "/", "home")}<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
+{hreflang("/")}{og("Casa Respira | Aria e acqua di casa, misurate e spiegate", "Guida indipendente su aria e acqua dentro casa. Radon, muffa, aria, ventilazione e acqua, spiegati con i numeri delle fonti pubbliche.", "/", "home")}<link rel="alternate" type="application/rss+xml" title="Casa Respira" href="{SITE}/feed.xml">
 </head>
 <body>
 {header('/')}
@@ -1283,7 +1419,7 @@ def build():
     cssv = hashlib.md5(CSS.encode()).hexdigest()[:8]
     HEAD_COMMON = HEAD_COMMON.replace("{CSSV}", cssv)
     # pulisce solo ciò che genera, mai la radice del repository
-    GENERATI = ["chi-siamo", "come-lavoriamo", "come-ci-sosteniamo", "radon", "muffa", "aria",
+    GENERATI = ["en", "chi-siamo", "come-lavoriamo", "come-ci-sosteniamo", "radon", "muffa", "aria",
                 "ventilazione", "acqua", "news", "index.html", "feed.xml", "sitemap.xml", "robots.txt"]
     for g in GENERATI:
         pth = os.path.join(OUT, g)
