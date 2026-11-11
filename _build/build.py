@@ -50,7 +50,6 @@ SEZIONI = [
         "Ventilazione meccanica controllata (VMC): come funziona e quanto costa"]),
     ("/acqua/", "Acqua di casa", "L'acqua del rubinetto è buona? Calcare, cloro, piombo nei tubi vecchi, pozzi privati, filtri e depuratori.", [
         "Calcare nell'acqua: durezza, danni e soluzioni",
-        "Caraffa, filtro al rubinetto o depuratore sotto il lavello: confronto",
         "Tubi vecchi e piombo nell'acqua: come capire se riguarda casa tua",
         "Acqua di pozzo privato: analisi, nitrati, potabilizzazione"]),
 ]
@@ -144,6 +143,24 @@ S = {
                  "https://www.radonoff.com/prodotto/dosimetro-passivo-cr-39/"),
     "fem2": ("FEM2 Ambiente, Dosimetro passivo CR-39 (prezzo letto l'11 novembre 2026)",
              "https://acqua.fem2ambiente.com/prodotto/dosimetro-passivo-cr-39/"),
+    "altroconsumo_filtri_2026": ("Altroconsumo, Impianti per filtrare l'acqua di casa: funzionano davvero? Inchiesta su 12 impianti installati (25 febbraio 2026)",
+                                 "https://www.altroconsumo.it/alimentazione/acqua/news/indagine-filtri-acqua"),
+    "altroconsumo_bonus": ("Altroconsumo, Bonus acqua e depuratore gratis: attenzione alle offerte poco trasparenti",
+                           "https://www.altroconsumo.it/alimentazione/acqua/news/bonus-acqua-spot-ingannevole"),
+    "altroconsumo_caraffe_2026": ("Altroconsumo, Qual è la miglior caraffa filtrante (30 ottobre 2026)",
+                                  "https://www.altroconsumo.it/alimentazione/acqua/news/miglior-caraffa-filtrante"),
+    "amazon_brita": ("Amazon.it, BRITA Marella 2,4 l con 1 cartuccia Maxtra Pro (prezzo letto l'11 novembre 2026)",
+                     "https://www.amazon.it/BRITA-Caraffa-filtrante-MARELLA-cartuccia/dp/B0D8PB9P92"),
+    "amazon_laica": ("Trovaprezzi, Caraffa filtrante Laica Stream Line, offerte Amazon.it (prezzi letti l'11 novembre 2026)",
+                     "https://www.trovaprezzi.it/prezzo_depuratori-trattamento-acqua_caraffa_filtrante_laica_stream_line.aspx"),
+    "waterdrop_t3": ("Waterdrop EU, sistemi a osmosi inversa sotto lavello, prezzi T3-M e X12 (letti l'11 novembre 2026)",
+                     "https://www.waterdropfilter.eu/it-it/collections/systems-osmosi-inversa"),
+    "waterdrop_ro": ("Waterdrop EU, Sistema ad osmosi inversa serie X, X12, costi annui dichiarati dei filtri",
+                     "https://www.waterdropfilter.eu/it/products/sistema-osmosi-inversa-x12"),
+    "kaufland_g3p600": ("Kaufland.it, Waterdrop G3P600 sistema a osmosi inversa NSF/ANSI 58 (prezzo letto l'11 novembre 2026)",
+                        "https://www.kaufland.it/product/477545297/"),
+    "trovaprezzi_philips": ("Trovaprezzi, Philips AUT2015 sotto lavello, offerta ForHome (prezzo letto l'11 novembre 2026)",
+                            "https://www.trovaprezzi.it/prezzo_depuratori-trattamento-acqua_philips_osmosi_inversa.aspx"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -564,7 +581,7 @@ add("/acqua/acqua-del-rubinetto/", "L'acqua del rubinetto è buona? Come saperlo
 </ul>
 <p>Le analisi vanno fatte da un laboratorio accreditato (norma ISO/IEC 17025): il referto riporta il valore misurato accanto al valore di parametro di legge. Il campione per il piombo va prelevato dal rubinetto usato per bere, di prima mattina, senza far scorrere l'acqua. I costi delle analisi variano per numero di parametri; li pubblicheremo quando verificati.</p>
 <h2>E i filtri?</h2>
-<p>Per un'acqua di rete conforme, un filtro non serve alla potabilità: serve al gusto (cloro) o al calcare (durezza). Caraffe, filtri al rubinetto e depuratori sotto il lavello fanno cose diverse e hanno costi di gestione diversi: il confronto è in una guida in preparazione. Un apparecchio non mantenuto, con cartucce scadute, peggiora l'acqua invece di migliorarla.</p>
+<p>Per un'acqua di rete conforme, un filtro non serve alla potabilità: serve al gusto (cloro) o al calcare (durezza). Caraffe, filtri al rubinetto e depuratori sotto il lavello fanno cose diverse e hanno costi di gestione diversi: li mettiamo a confronto, con i prezzi, in <a href="/acqua/filtri-confronto/">Caraffa, filtro al rubinetto o depuratore</a>. Un apparecchio non mantenuto, con cartucce scadute, peggiora l'acqua invece di migliorarla.</p>
 <p class="nota">Questa guida non sostituisce il parere di un tecnico né del medico. Per avvisi di non potabilità vale sempre la comunicazione del gestore e del Comune.</p>
 """, sources=fonti("dlgs_18_2023", "dlgs_102_2025", "ispra_sintai"),
     section="acqua",
@@ -609,7 +626,7 @@ add("/acqua/pfas/", "PFAS nell'acqua del rubinetto: cosa sono, dove si trovano e
 <li>Se l'acqua di rete è conforme, un filtro per i PFAS non è necessario: il gestore ha già l'obbligo di rispettare il parametro al contatore.</li>
 <li>Se vivi in un'area con superamenti o hai un pozzo con PFAS, l'osmosi inversa è la tecnologia con i risultati più costanti; i carboni attivi funzionano solo con cartucce certificate per i PFAS e cambiate nei tempi indicati.</li>
 <li>Nessun filtro domestico è stato ancora provato in modo affidabile sul TFA, la molecola a catena corta più diffusa.</li>
-<li>L'osmosi inversa toglie anche i sali minerali e scarta una parte dell'acqua: va scelta sapendolo. Il confronto tra caraffe, filtri al rubinetto e depuratori, con prezzi verificati, è in preparazione.</li>
+<li>L'osmosi inversa toglie anche i sali minerali e scarta una parte dell'acqua: va scelta sapendolo. Il confronto tra caraffe, filtri al rubinetto e depuratori, con prezzi verificati, è in <a href="/acqua/filtri-confronto/">Caraffa, filtro al rubinetto o depuratore</a>.</li>
 </ul>
 <h2>Cosa non trovi in questa pagina</h2>
 <p>Non diamo valutazioni sugli effetti dei PFAS sulla salute delle singole persone né consigli su esami del sangue: sono temi del medico, dell'ASL e, nelle aree interessate, dei piani di sorveglianza regionali. Riportiamo i limiti di legge e come controllare l'acqua della propria casa.</p>
@@ -801,6 +818,54 @@ add("/muffa/condensa-finestre/", "Condensa sulle finestre: perché si forma e co
            "Nove volte su dieci la causa è l'aria (respiro, docce, bucato, poco ricambio), non la finestra; l'igrometro lo dice subito.",
            "Prima arieggiare bene e produrre meno vapore, poi deumidificatore; i serramenti nuovi risolvono ma richiedono più ventilazione."],
     chiave=("13 °C", "punto di rugiada", "con aria a 20 °C e umidità al 65%: ogni superficie più fredda si bagna"))
+
+add("/acqua/filtri-confronto/", "Caraffa, filtro al rubinetto o depuratore sotto il lavello: confronto con prezzi",
+    "Cosa fa davvero ogni sistema (caraffe Brita e Laica, filtri al rubinetto, sotto lavello a carboni, osmosi inversa, impianti installati), cosa dice l'inchiesta Altroconsumo 2026, cosa serve contro calcare, cloro e PFAS, e quanto costa all'anno. Prezzi verificati l'11 novembre 2026.",
+    """
+<p>Il mercato dei filtri per l'acqua vive su un'idea: che l'acqua del rubinetto non sia abbastanza buona. In Italia, per la grande maggioranza delle case, non è vero: è controllata per legge e conforme. Un filtro ha senso per tre motivi concreti, gusto (cloro), calcare (durezza) e, in zone specifiche, PFAS o piombo dai tubi vecchi. Questa guida confronta i sistemi per quello che fanno davvero e per quanto costano nel tempo, non per quello che promettono.</p>
+<h2>Prima di comprare: serve davvero?</h2>
+<p>Altroconsumo, nella sua guida alle caraffe di ottobre 2026, mette al primo posto una domanda: l'acqua del tuo rubinetto ha davvero bisogno di essere trattata? Per rispondere bastano i valori del gestore per il tuo comune, come spiegato nella guida <a href="/acqua/acqua-del-rubinetto/">L'acqua del rubinetto è buona?</a>. Se cloro, durezza e PFAS sono nella norma e il sapore ti va bene, il filtro migliore è nessun filtro.</p>
+<p>Nell'inchiesta pubblicata il 25 febbraio 2026, Altroconsumo ha fatto analizzare l'acqua prima e dopo 12 impianti installati in case di volontari (Grohe, Culligan, Acqualife, Better Life e altri). Il risultato in sintesi: i filtri migliorano gusto e alcuni parametri chimici, ma non sempre sono necessari; gli impianti a osmosi inversa riducono drasticamente calcio e magnesio, cioè producono un'acqua molto povera di sali; il prezzo medio degli impianti testati era intorno ai 2.300 euro, con una forchetta da 450 a oltre 4.000.</p>
+<h2>I cinque sistemi, cosa fanno e cosa no</h2>
+<table class="tab">
+<thead><tr><th>Sistema</th><th>Cosa fa</th><th>Cosa non fa</th><th>Prezzo verificato</th><th>Costo cartucce</th></tr></thead>
+<tbody>
+<tr><td><strong>Caraffa filtrante</strong> (carboni attivi + resine)</td><td>Toglie il sapore di cloro, riduce la durezza (meno calcare in bollitore e macchina del caffè); le cartucce più recenti dichiarano anche una riduzione di PFAS e metalli</td><td>Non serve alla potabilità; la cartuccia va cambiata ogni 4 settimane o si peggiora l'acqua; filtra poco più di un litro alla volta</td><td>Brita Marella 2,4 l con 1 cartuccia Maxtra Pro: 24,95 € · Laica Stream Line 2,3 l: 14,90-17,46 € (Amazon.it)</td><td>Brita Maxtra Pro: 7-12 € a cartuccia secondo la confezione · Laica bi-flux: 39,90 € per 12 (3,30 € l'una). Un anno: 40-140 €</td></tr>
+<tr><td><strong>Filtro al rubinetto</strong></td><td>Come la caraffa, ma in continuo e senza aspettare; comodo per cucinare</td><td>Portata ridotta; non toglie nitrati; il test Altroconsumo sui filtri da rubinetto non ha trovato variazioni di residuo fisso e conducibilità</td><td>Brita On Tap: 62,85 € · Laica FR01A01: 15,99 € (Amazon.it)</td><td>Brita On Tap: 1 cartuccia ogni 600 litri, circa 4 mesi; Laica: cartucce economiche ma vita breve. Un anno: 40-100 €</td></tr>
+<tr><td><strong>Sotto lavello a carboni / ultrafiltrazione</strong></td><td>Cloro, sapore, sedimenti, in alcuni modelli batteri (ultrafiltrazione); mantiene i sali minerali; rubinetto dedicato</td><td>Non riduce la durezza né nitrati; sui PFAS i carboni attivi hanno risultati molto variabili (studio Duke: in media -73%, ma alcuni non toglievano nulla)</td><td>Philips AUT2015: 149,24 € (ForHome, via Trovaprezzi)</td><td>Cartuccia ogni 6-12 mesi, 30-80 €</td></tr>
+<tr><td><strong>Osmosi inversa sotto lavello</strong></td><td>Toglie quasi tutto: calcare, nitrati, piombo, PFAS (studio Duke: in media -94%), microplastiche, residuo fisso; è il sistema con i risultati più costanti sui PFAS</td><td>Toglie anche calcio e magnesio (acqua "vuota", a meno di uno stadio di remineralizzazione); scarta una parte dell'acqua; serve una presa elettrica nei modelli senza serbatoio; manutenzione annuale da fare davvero</td><td>Waterdrop T3-M 450 GPD con remineralizzazione: 219,99 € (sito Waterdrop EU) · Waterdrop G3P600: 399,99 € (Kaufland.it) · Waterdrop X12: 879-1.099 € (sito Waterdrop EU)</td><td>Filtri: Waterdrop dichiara 160-183 € l'anno per la serie X; membrana ogni 2-3 anni</td></tr>
+<tr><td><strong>Impianto installato</strong> (Culligan, Grohe Blue, Acqualife e simili)</td><td>Acqua filtrata, spesso refrigerata e gassata, da un rubinetto dedicato; assistenza a domicilio; a seconda del modello carboni, ultrafiltrazione o osmosi</td><td>Costa 5-10 volte un sistema equivalente da montare da sé; vendita a domicilio con pratiche che Altroconsumo ha denunciato come poco trasparenti ("bonus acqua" inesistente, test gratuiti che sono visite di vendita)</td><td>Grohe Blue Home: 1.000-2.400 € · media degli impianti testati da Altroconsumo: circa 2.300 €, da 450 a oltre 4.000</td><td>Contratti di manutenzione annuale, spesso 100-250 € (varia per installatore: chiedere il prezzo scritto)</td></tr>
+</tbody>
+</table>
+<h2>Cosa scegliere per ogni problema</h2>
+<ul>
+<li><strong>Sapore di cloro.</strong> Prima prova gratis: acqua in una caraffa aperta in frigorifero per un'ora, il cloro evapora. Se non basta, caraffa filtrante o filtro al rubinetto: fanno esattamente questo. Non serve altro.</li>
+<li><strong>Calcare.</strong> Per bere, la caraffa riduce la durezza; per lavatrice, caldaia e doccia serve un addolcitore sull'impianto, che è un'altra cosa (guida in preparazione). L'osmosi toglie il calcare dall'acqua da bere ma è una soluzione sproporzionata se il problema è solo quello.</li>
+<li><strong>Nitrati</strong> (pozzi, aree agricole): solo osmosi inversa o scambio ionico dedicato; caraffe e carboni non li toccano.</li>
+<li><strong>PFAS.</strong> Se il gestore è conforme (somma di PFAS sotto 0,10 µg/L dal 2026), non serve un filtro. Se vivi in un'area con superamenti o hai un pozzo: osmosi inversa, oppure carboni attivi con cartuccia certificata per i PFAS (norma NSF/ANSI 53 o 58) e cambiata puntualmente. Le caraffe che dichiarano "riduce PFAS" riportano un dato del produttore su condizioni di laboratorio: non è verificato da noi e non vale come protezione in un'area contaminata. Il tema è spiegato nella guida ai <a href="/acqua/pfas/">PFAS nell'acqua del rubinetto</a>.</li>
+<li><strong>Piombo</strong> (tubi vecchi): osmosi inversa, o carboni con certificazione specifica per il piombo; la soluzione vera è sostituire i tubi. Guida in preparazione.</li>
+<li><strong>Acqua di pozzo.</strong> Prima l'analisi, poi il sistema, che spesso è un potabilizzatore a monte di tutta la casa, non un filtro al rubinetto.</li>
+</ul>
+<h2>Il costo vero è nelle cartucce</h2>
+<p>Una caraffa da 20 euro costa 90-140 euro l'anno di cartucce se le cambi come prescritto, cioè ogni mese. Un sotto lavello da 150 euro costa 30-80 euro l'anno. Un'osmosi da 220-400 euro costa 100-180 euro l'anno. Un impianto installato da 2.000 euro costa anche 100-250 euro l'anno di manutenzione. Prima di scegliere, calcola tre anni di esercizio, non il prezzo di acquisto: la caraffa è il sistema con il costo d'ingresso più basso e tra i più cari nel tempo.</p>
+<p>E c'è una regola che vale per tutti: un filtro con la cartuccia scaduta è peggio di nessun filtro. Trattiene batteri e rilascia quello che aveva accumulato. Se sai che non cambierai le cartucce, non comprarlo.</p>
+<h2>Il nostro consiglio</h2>
+<ul>
+<li><strong>Acqua di rete conforme, sapore che non ti piace:</strong> caraffa Laica Stream Line o Brita Marella, scegliendo in base al costo delle cartucce, che è dove si spende. Oppure il filtro al rubinetto se bevi e cucini molto con acqua filtrata.</li>
+<li><strong>Vuoi acqua filtrata in continuo senza stravolgere l'acqua:</strong> un sotto lavello a carboni/ultrafiltrazione come il Philips AUT2015. Mantiene i minerali, costa poco da mantenere.</li>
+<li><strong>PFAS, nitrati, piombo o pozzo:</strong> osmosi inversa con remineralizzazione, come il Waterdrop T3-M o il G3P600. Chiedi sempre la certificazione NSF/ANSI 58 e metti in agenda il cambio filtri.</li>
+<li><strong>Impianto installato:</strong> solo se vuoi acqua fredda e gassata dal rubinetto e il servizio a domicilio vale per te la differenza di prezzo. Pretendi un preventivo scritto con il costo della manutenzione, non firmare durante la visita e diffida di qualsiasi "bonus acqua": il credito d'imposta per i sistemi di filtraggio è finito nel 2024, come ricorda Altroconsumo.</li>
+</ul>
+<aside class="aff"><p class="aff-t">Affiliazioni</p><p>Stiamo attivando programmi di affiliazione con Amazon e con Waterdrop: quando saranno attivi, alcuni link di questa pagina ci riconosceranno una commissione, a prezzo invariato per te. Il confronto qui sopra non cambia: per la maggior parte delle case conformi il consiglio resta di non comprare nulla.</p></aside>
+<h2>Come abbiamo verificato i prezzi</h2>
+<p>Prezzi letti il giorno indicato in fondo alla pagina sui siti citati, IVA inclusa, senza spedizione. I prezzi Amazon oscillano di giorno in giorno; quelli degli impianti installati vengono dall'inchiesta Altroconsumo e non da preventivi nostri. I dati sull'efficacia contro i PFAS vengono dallo studio Duke University / NC State e non da prove nostre. Se trovi una differenza, scrivici e aggiorniamo.</p>
+<p class="nota">Questa guida non sostituisce l'analisi dell'acqua né il parere di un tecnico. Per acque di pozzo o superamenti dichiarati dal gestore, parti dall'analisi di un laboratorio accreditato.</p>
+""", sources=fonti("altroconsumo_filtri_2026", "altroconsumo_bonus", "altroconsumo_caraffe_2026", "fattoalimentare_filtri", "amazon_brita", "amazon_laica", "waterdrop_t3", "waterdrop_ro", "kaufland_g3p600", "trovaprezzi_philips", "dlgs_18_2023"),
+    section="acqua", data="11 novembre 2026",
+    breve=["Con acqua di rete conforme, un filtro serve al gusto o al calcare, non alla potabilità: il filtro migliore spesso è nessun filtro (Altroconsumo, ottobre 2026).",
+           "Caraffe e filtri al rubinetto costano poco all'acquisto e 40-140 € l'anno di cartucce; l'osmosi inversa (220-400 €) è l'unica costante su PFAS, nitrati e piombo, ma toglie anche i minerali.",
+           "Gli impianti installati costano in media 2.300 € (Altroconsumo, febbraio 2026): valgono solo per acqua fredda e gassata e assistenza, mai per paura."],
+    chiave=("2.300", "euro", "prezzo medio degli impianti domestici installati analizzati da Altroconsumo nel 2026; una caraffa costa 20"))
 
 # ------------------------------------------------------------- bozze
 add("/bozze/risanamento/", "BOZZA: radon alto, come si risana una casa e quanto costa",
