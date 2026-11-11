@@ -64,6 +64,11 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .sc-unit{font:400 12.5px "IBM Plex Sans",sans-serif;fill:var(--grigio)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
+.tab{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:15px}
+.tab th,.tab td{border-bottom:1px solid var(--nebbia);padding:10px 10px;text-align:left;vertical-align:top}
+.tab th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--grigio);background:var(--nebbia-chiara)}
+.tab td:first-child{font-weight:500}
+@media (max-width:860px){.tab{display:block;overflow-x:auto;white-space:nowrap}.tab td,.tab th{white-space:normal;min-width:150px}}
 .schema{margin:24px 0;background:var(--bianco);border:1px solid var(--nebbia);border-radius:10px;padding:12px}
 .schema svg{width:100%;height:auto;display:block}
 .schema figcaption{font-size:14px;color:var(--grigio);margin-top:10px;line-height:1.5}

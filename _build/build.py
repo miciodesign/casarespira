@@ -38,12 +38,10 @@ TEMI = {  # path -> (classe, colore, colore chiaro)
 # Sezioni: (path, nome, lead, guide previste)
 SEZIONI = [
     ("/radon/", "Radon", "Un gas radioattivo che sale dal suolo. È regolato per legge, poco misurato, e si conosce solo con una misura.", [
-        "I migliori rilevatori di radon per la casa (confronto)",
         "Radon alto: come si risana una casa e quanto costa",
         "Radon in Piemonte, Veneto, Lazio e nelle altre regioni"]),
     ("/muffa/", "Muffa e umidità", "Da dove viene la muffa, perché torna, e cosa funziona davvero tra deumidificatori, pitture e interventi.", [
-        "I migliori deumidificatori per la casa (confronto)",
-        "Condensa sulle finestre: perché e cosa fare"]),
+        "I migliori deumidificatori per la casa (confronto)"]),
     ("/aria/", "Aria che respiri", "CO₂, polveri sottili, composti volatili e monossido: cosa misurare, con quali strumenti, e quando serve un purificatore.", [
         "I migliori rilevatori di qualità dell'aria (CO₂, polveri)",
         "Purificatori d'aria: servono davvero? Confronto",
@@ -132,6 +130,20 @@ S = {
                          "https://ediltecnico.it/gas-radon-cosa-cambia-nuove-costruzioni-dal-1-gennaio-2025/"),
     "inail_radon": ("INAIL, Prevenzione e protezione dall'esposizione al radon nei luoghi di lavoro secondo la normativa vigente (PDF, copia su lavoripubblici.it)",
                     "https://lavoripubblici.it/documenti2024/lvpb2/inail-rischio-radon-luoghi-lavoro.pdf"),
+    "airthings_ch2": ("Airthings, Corentium Home 2, pagina prodotto con prezzo EU (letta l'11 novembre 2026)",
+                      "https://www.airthings.com/en/products/corentium-home-2"),
+    "amazon_ch1": ("Amazon.it, Corentium Home by Airthings (prezzo letto l'11 novembre 2026)",
+                   "https://www.amazon.it/Airthings-Corentium-Radon-Rivelatore-digitale/dp/B0G7MJ9VF8"),
+    "radonmarket_fido": ("RadonMarket (Niton Srl), Radon test kit FIDOtrack, rivelatori passivi CR-39 (prezzi letti l'11 novembre 2026)",
+                         "https://www.radonmarket.com/it/misurazione-radon-rivelatori-passivi-fidotrack/"),
+    "radonmarket_eye": ("RadonMarket (Niton Srl), RadonEye Bluetooth, versione internazionale (prezzo letto l'11 novembre 2026)",
+                        "https://www.radonmarket.com/it/product/radoneye-bluetooth-rilevatore-gas-radon-versione-internazionale-in-bq-m3-guida-rapida-e-manuale-operativo-in-italiano/"),
+    "radonshop_eye": ("Radonshop.com (Germania), RadonEye RD200 (prezzo letto l'11 novembre 2026)",
+                      "https://www.radonshop.com/ftlab-radoneye-rd200-radon-gas-detector-r222-testing"),
+    "radonoff": ("Radonoff, Dosimetro passivo CR-39 (prezzo letto l'11 novembre 2026)",
+                 "https://www.radonoff.com/prodotto/dosimetro-passivo-cr-39/"),
+    "fem2": ("FEM2 Ambiente, Dosimetro passivo CR-39 (prezzo letto l'11 novembre 2026)",
+             "https://acqua.fem2ambiente.com/prodotto/dosimetro-passivo-cr-39/"),
     "airthings": ("Airthings, programma di affiliazione",
                   "https://airthings.com/affiliate-program"),
 }
@@ -145,11 +157,11 @@ PAGES = []
 
 
 def add(path, title, desc, body, sources=(), status="live", section=None,
-        breve=None, chiave=None, scala=False, lang="it"):
+        breve=None, chiave=None, scala=False, lang="it", data=None):
     PAGES.append(dict(path=path, title=title, desc=desc, body=body,
                       sources=list(sources), status=status, section=section,
                       breve=breve or [], chiave=chiave, scala=scala,
-                      pubdate=PUB_RFC822, lang=lang))
+                      pubdate=PUB_RFC822, lang=lang, data=data))
 
 
 # ------------------------------------------------------------- pagine fisse
@@ -220,7 +232,7 @@ add("/radon/guida-completa/", "Radon in casa: la guida completa",
 <p>Non si sa quanto radon c'è in casa senza una misura. Il dato di riferimento è la media annua, e per questo la misura va fatta per un periodo lungo. Le indicazioni pratiche sono nella guida <a href="/radon/come-si-misura/">Come si misura il radon in casa</a>.</p>
 <h2>Se il valore è alto</h2>
 <p>Il radon si può ridurre. La tecnica più usata negli edifici con platea è la depressurizzazione del suolo: un pozzetto con un tubo e un ventilatore che aspira il gas dal sottosuolo e lo scarica all'esterno, secondo l'ISS. Le altre tecniche e i loro costi saranno trattati in una guida dedicata, in preparazione.</p>
-<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: nel <a href="/radon/rilevatori/">confronto tra rilevatori di radon</a>, con prezzi verificati, per la maggior parte delle case consigliamo un kit da laboratorio su cui non guadagniamo nulla.</p></aside>
 <h2>Dove andare dopo</h2>
 <ul>
 <li><a href="/radon/come-si-misura/">Come si misura il radon in casa</a></li>
@@ -248,7 +260,7 @@ add("/radon/come-si-misura/", "Come si misura il radon in casa",
 <li><strong>Dosimetri passivi</strong>: restano nell'ambiente per un periodo di misura, poi vanno analizzati in laboratorio. Sono il metodo più usato per la media annua.</li>
 <li><strong>Rilevatori elettronici</strong>: mostrano l'andamento nel tempo e danno una lettura continua. Sono utili per capire quando il valore sale, ma la lettura va confrontata con una misura di riferimento.</li>
 </ul>
-<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: nel <a href="/radon/rilevatori/">confronto tra rilevatori di radon</a>, con prezzi verificati, per la maggior parte delle case consigliamo un kit da laboratorio su cui non guadagniamo nulla.</p></aside>
 <h2>Come fare una misura utile</h2>
 <ul>
 <li>Misura nel piano più frequentato, di solito la zona giorno al piano terra o nel locale abitato più basso.</li>
@@ -467,7 +479,7 @@ add("/aria/qualita-aria-casa/", "La qualità dell'aria in casa: cosa misurare e 
 <li><strong>CO</strong>: un rilevatore con allarme acustico, conforme alla norma EN 50291, nel locale della caldaia o della stufa, con batterie controllate. Non è un monitor di qualità dell'aria: è un allarme.</li>
 </ul>
 <p>Il confronto tra rilevatori di qualità dell'aria, con prezzi verificati, è in preparazione.</p>
-<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: il confronto tra rilevatori, con prezzi verificati, è in preparazione, e includerà anche strumenti di altri produttori.</p></aside>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Per i rilevatori di radon e di qualità dell'aria Airthings, il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto. Casa Respira riceve una commissione sugli acquisti fatti con il codice. Il codice non cambia il nostro giudizio sui prodotti: nel <a href="/radon/rilevatori/">confronto tra rilevatori di radon</a>, con prezzi verificati, per la maggior parte delle case consigliamo un kit da laboratorio su cui non guadagniamo nulla.</p></aside>
 <h2>Come leggere i numeri</h2>
 <ul>
 <li>Guarda l'andamento, non il singolo valore. Una stanza da letto che la mattina segna 2.000 ppm di CO₂ dice che la notte l'aria non si è ricambiata.</li>
@@ -705,21 +717,92 @@ add("/en/property-due-diligence/", "Air and water due diligence for property in 
            "Mould and ventilation: no legal limits in private buildings, but ISS and Ministry of Health benchmarks exist (1,000 ppm CO₂, 50% humidity)."],
     chiave=("24", "months", "deadline for the operator to complete a radon measurement in a workplace covered by the decree"))
 
-# ------------------------------------------------------------- bozze
-add("/bozze/rilevatori-confronto/", "BOZZA: i migliori rilevatori di radon per la casa",
-    "Bozza. Pagina in attesa di prezzi verificati.",
+add("/radon/rilevatori/", "I migliori rilevatori di radon per la casa: confronto 2026 con prezzi",
+    "Dosimetri passivi da laboratorio o rilevatori elettronici: Airthings Corentium Home 2, Wave Radon, RadonEye RD200 e kit CR-39 a confronto, con prezzi verificati a novembre 2026 e quale scegliere a seconda dell'uso.",
     """
-<p class="nota"><strong>Bozza, non pubblicata.</strong> La tabella dei prezzi non è ancora verificata.</p>
-<h2>Cosa confrontare</h2>
+<p>Per sapere quanto radon c'è in casa ci sono due strade: un dosimetro passivo, che si lascia in una stanza per mesi e si spedisce a un laboratorio, oppure un rilevatore elettronico, che mostra i valori sul display o sull'app. Costano cifre diverse e rispondono a domande diverse. Questa guida le confronta, con i prezzi verificati alla data in fondo alla pagina.</p>
+<h2>Prima la domanda, poi lo strumento</h2>
 <ul>
-<li>Tipo di misura: dosimetro passivo da laboratorio o rilevatore elettronico con lettura continua.</li>
-<li>Uso previsto: misura annua per la media di legge, oppure controllo nel tempo.</li>
-<li>Costi nel tempo: abbonamento, sostituzioni, analisi di laboratorio.</li>
+<li><strong>"Voglio sapere se la mia casa è sopra o sotto i 300 Bq/m³."</strong> Serve una media annua, o almeno invernale: un dosimetro passivo con analisi di laboratorio, da 20 a 40 euro a stanza. È anche l'unico risultato che vale per la legge, per un contenzioso o per un acquisto.</li>
+<li><strong>"Voglio vedere come cambia il radon e controllare se il risanamento funziona."</strong> Serve un rilevatore elettronico, da 130 a 230 euro: mostra la variazione giorno per giorno, per esempio quando si apre o si chiude la cantina, e resta in casa per anni.</li>
+<li><strong>"Devo fare la misura per il mio negozio o ufficio."</strong> La legge chiede un servizio di dosimetria riconosciuto, con relazione tecnica: non un rilevatore comprato online. Vedi <a href="/radon/normativa/">cosa dice la legge</a>.</li>
 </ul>
-<h2>Tabella prodotti</h2>
-<p>Da completare dopo la verifica dei prezzi.</p>
-""", status="draft", section="bozza")
+<p>Molte persone fanno bene a combinare le due cose: dosimetro per la misura ufficiale, rilevatore elettronico per capire e intervenire. Come si posizionano e per quanto tempo è spiegato in <a href="/radon/come-si-misura/">Come si misura il radon in casa</a>.</p>
+<h2>Dosimetri passivi (CR-39): la misura di riferimento</h2>
+<p>Un dischetto di plastica speciale in una piccola camera: le particelle alfa del radon lasciano tracce che il laboratorio conta al microscopio dopo l'esposizione. Nessuna batteria, nessun display, nessun errore di lettura. Si lascia in posizione da 2 a 6 mesi (meglio in inverno) e si rispedisce.</p>
+<table class="tab">
+<thead><tr><th>Prodotto</th><th>Cosa include</th><th>Prezzo verificato</th><th>Dove</th></tr></thead>
+<tbody>
+<tr><td>Kit FIDOtrack, 1 rivelatore CR-39</td><td>1 punto di misura, analisi di laboratorio e certificato inclusi; spedizione di ritorno a carico tuo</td><td>21,96 € (18,00 + IVA)</td><td>RadonMarket (Niton Srl)</td></tr>
+<tr><td>Kit FIDOtrack, 3 rivelatori CR-39</td><td>3 punti di misura (per esempio taverna, soggiorno, camera), analisi inclusa; opzione secondo kit semestrale per la media annua</td><td>62,10 € (50,90 + IVA)</td><td>RadonMarket (Niton Srl)</td></tr>
+<tr><td>Dosimetro passivo CR-39</td><td>1 rivelatore, analisi e certificato; spedizione di ritorno a carico tuo</td><td>35,00 €</td><td>Radonoff</td></tr>
+<tr><td>Dosimetro passivo CR-39</td><td>1 rivelatore, analisi e certificato, busta per il laboratorio</td><td>39,90 €</td><td>FEM2 Ambiente</td></tr>
+</tbody>
+</table>
+<p>I kit sono equivalenti nel principio: quello che cambia è il laboratorio che fa l'analisi. Prima di ordinare, cerca sul sito chi analizza i dosimetri e se è accreditato (ISO/IEC 17025): è quello che dà valore al certificato. Molte ARPA e alcuni Comuni distribuiscono dosimetri gratuiti nelle campagne di misura: controlla nelle <a href="/news/">notizie</a> e sul sito della tua Regione prima di comprare.</p>
+<h2>Rilevatori elettronici: vedere il radon cambiare</h2>
+<p>Una camera a ionizzazione o un sensore a stato solido conta i decadimenti in continuo; dopo 24 ore compaiono le prime medie, e dopo qualche settimana la lettura si stabilizza. Non sostituiscono il laboratorio per la media annua ufficiale, ma dicono subito se c'è un problema e dove.</p>
+<table class="tab">
+<thead><tr><th>Modello</th><th>Punti di forza</th><th>Limiti</th><th>Prezzo verificato</th></tr></thead>
+<tbody>
+<tr><td><strong>Airthings Corentium Home 2</strong></td><td>Display con medie 24 h, 7 giorni, 30 giorni e lungo periodo; Bluetooth e app; temperatura e umidità; 2 pile AA fino a 3 anni; garanzia 5 anni; sensore collaudato dal 2011</td><td>Nessun Wi-Fi: i dati si scaricano avvicinando il telefono; sensibilità più bassa del RadonEye, quindi serve più tempo per una lettura stabile</td><td>179,00 € sul sito Airthings (listino EU); con il codice CASARESPIRA-10OFF circa 161 €</td></tr>
+<tr><td><strong>Airthings Corentium Home</strong> (prima generazione)</td><td>Stesso sensore, senza connettività: display e basta; pile AAA; molto diffuso, oltre 1.200 recensioni su Amazon.it</td><td>Nessuna app né storico esportabile; in esaurimento</td><td>129,92 € su Amazon.it (ne restano pochi, i prezzi oscillano)</td></tr>
+<tr><td><strong>Airthings Wave Radon</strong></td><td>Senza display: si agita la mano davanti e un anello colorato dice verde, giallo o rosso; app con grafici; integrabile con hub Airthings</td><td>Per i numeri serve sempre il telefono; prezzo simile al Corentium Home 2 che ha anche il display</td><td>circa 195 € presso rivenditori europei (non disponibile sui negozi italiani che abbiamo controllato)</td></tr>
+<tr><td><strong>Ecosense RadonEye RD200</strong></td><td>Camera a ionizzazione ad alta sensibilità: prima lettura in 10 minuti, risposta rapida alle variazioni; Bluetooth e app; certificato di calibrazione</td><td>Alimentato a rete (serve una presa vicino al punto di misura); design da laboratorio; manuale in italiano solo tramite il distributore</td><td>230,58 € (189,00 + IVA) da RadonMarket (Niton Srl); 189 € IVA inclusa da Radonshop (Germania), più spedizione</td></tr>
+</tbody>
+</table>
+<h2>Il nostro consiglio</h2>
+<ul>
+<li><strong>Per la maggior parte delle case: un kit CR-39 da 3 rivelatori (62 €)</strong>, posato a novembre e rispedito a marzo. È la misura che conta e costa meno di un pieno di benzina.</li>
+<li><strong>Se vivi in un'<a href="/radon/lombardia/">area prioritaria</a>, hai una taverna abitata o vuoi tenere il radon sotto controllo nel tempo: Corentium Home 2.</strong> Il display rende la lettura immediata per tutta la famiglia, le pile durano anni e la garanzia è di 5 anni. È il rilevatore che useremmo noi per una casa.</li>
+<li><strong>Se devi verificare un risanamento o capire da dove entra il gas: RadonEye RD200.</strong> La risposta in minuti permette di fare prove (aprire una finestra, sigillare un passaggio) e vedere l'effetto in giornata. Per chi segue i lavori, vale la differenza.</li>
+<li><strong>Da evitare:</strong> i "rilevatori di radon" sotto i 50 euro con sensore di gas generico, venduti sui marketplace. Non misurano il radon; misurano altro e lo chiamano radon.</li>
+</ul>
+<aside class="aff"><p class="aff-t">Codice sconto Airthings, con affiliazione</p><p>Sui prodotti Airthings il codice <strong>CASARESPIRA-10OFF</strong> su <a href="https://discount.airthings.com/" rel="nofollow sponsored noopener">discount.airthings.com</a> dà il 10% di sconto e a Casa Respira una commissione. Il consiglio qui sopra è lo stesso che daremmo senza il codice: lo dimostra il fatto che per la maggior parte delle case consigliamo un kit da 62 euro su cui non guadagniamo nulla.</p></aside>
+<h2>Come abbiamo verificato i prezzi</h2>
+<p>I prezzi sono quelli mostrati dai venditori indicati, IVA inclusa salvo dove specificato, letti il giorno indicato in fondo alla pagina. Non includono la spedizione. I prezzi Amazon cambiano spesso: quello riportato è un riferimento, non una promessa. Se trovi una differenza, scrivici e aggiorniamo.</p>
+<p class="nota">Questa guida non sostituisce il parere di un esperto in interventi di risanamento radon né, per i luoghi di lavoro, un servizio di dosimetria riconosciuto.</p>
+""", sources=fonti("airthings_ch2", "amazon_ch1", "radonmarket_fido", "radonmarket_eye", "radonshop_eye", "radonoff", "fem2", "iss_epicentro"),
+    section="radon", data="11 novembre 2026",
+    breve=["Per sapere se sei sopra i 300 Bq/m³ serve un dosimetro passivo da laboratorio: 22-40 € a stanza, esposto 2-6 mesi in inverno.",
+           "Un rilevatore elettronico (130-230 €) mostra il radon cambiare e serve per controllare nel tempo e verificare i lavori.",
+           "Il nostro consiglio: kit CR-39 da 3 rivelatori per quasi tutti; Airthings Corentium Home 2 per il controllo continuo; RadonEye per chi fa i lavori."])
 
+add("/muffa/condensa-finestre/", "Condensa sulle finestre: perché si forma e cosa fare davvero",
+    "Perché i vetri si bagnano d'inverno, cosa dice il punto di rugiada, quando è colpa delle finestre e quando dell'aria, e i rimedi in ordine di efficacia, dalle abitudini ai serramenti.",
+    """
+<p>Le gocce sui vetri la mattina sono il termometro dell'umidità di casa. Non sono un difetto della finestra, nella maggior parte dei casi, ma il segno che l'aria interna contiene più vapore di quanto le superfici fredde possano sopportare. Questa guida spiega il meccanismo, come capire la causa nel tuo caso e cosa fare, in ordine di efficacia.</p>
+<h2>Perché si forma</h2>
+<p>L'aria calda trattiene molto vapore, l'aria fredda poco. Quando l'aria della stanza tocca una superficie più fredda, si raffredda e il vapore in eccesso diventa acqua. La temperatura a cui succede si chiama punto di rugiada e dipende solo da temperatura e umidità dell'aria: con 20 °C e umidità relativa al 50% è circa 9 °C; al 65% sale a circa 13 °C. Un vetro singolo in una notte d'inverno sta ben sotto, e si bagna; un doppio vetro moderno resta intorno ai 15-17 °C sul lato interno, e si bagna solo se l'umidità è molto alta.</p>
+<p>Per questo la condensa compare prima sui vetri: sono la superficie più fredda della stanza. Ma la stessa aria condensa anche, senza che si veda, sugli angoli delle pareti esterne e dietro i mobili: lì nasce la muffa. I vetri bagnati sono un avviso utile, non il problema.</p>
+<h2>Tre casi diversi</h2>
+<ul>
+<li><strong>Condensa sul lato interno del vetro</strong>, la mattina, che sparisce arieggiando: aria troppo umida o vetro troppo freddo. È il caso di questa guida.</li>
+<li><strong>Condensa tra i due vetri</strong> di un vetrocamera, che non si asciuga mai: la guarnizione del vetro è rotta e il gas isolante è uscito. Non c'entra l'aria di casa; va sostituito il vetro.</li>
+<li><strong>Condensa sul lato esterno</strong>, in autunno all'alba: segno che il vetro isola bene (la faccia esterna resta fredda). Nessun problema.</li>
+</ul>
+<h2>Da dove viene il vapore</h2>
+<p>Una famiglia produce in casa litri d'acqua al giorno sotto forma di vapore: respiro, docce, cucina, bucato steso dentro, piante, acquari. Se il ricambio d'aria non lo porta fuori, resta nell'aria e si deposita sui vetri. La camera da letto è il caso tipico: due persone respirano per otto ore a finestra chiusa e il mattino il vetro è grondante. Il Ministero della Salute consiglia di tenere l'umidità relativa sotto il 50% e di non asciugare i panni in ambienti chiusi e poco ventilati. Un igrometro da pochi euro, messo sul davanzale, dice subito a che punto sei.</p>
+<h2>Cosa fare, in ordine</h2>
+<ol>
+<li><strong>Arieggiare bene, non a lungo.</strong> Appena svegli, finestra spalancata per pochi minuti insieme a una sul lato opposto; lo stesso dopo doccia e cucina, con la porta della stanza chiusa. Le indicazioni dell'ISS e il perché una ribalta aperta per ore peggiora le cose sono in <a href="/ventilazione/aprire-le-finestre/">Aprire le finestre bene</a>.</li>
+<li><strong>Produrre meno vapore.</strong> Coperchi sulle pentole, cappa verso l'esterno, panni fuori o in una stanza ventilata con la porta chiusa. Se usi un umidificatore, spegnilo: con la condensa sui vetri non serve.</li>
+<li><strong>Non raffreddare le finestre.</strong> Tende pesanti chiuse e tapparelle abbassate fino al vetro isolano la stanza dal vetro e lo lasciano gelare: la condensa aumenta. Un termosifone sotto la finestra, se c'è, va lasciato libero: il suo compito è proprio scaldare il vetro. I mobili non vanno addossati alle pareti esterne.</li>
+<li><strong>Asciugare i vetri la mattina.</strong> Non risolve, ma evita che l'acqua coli sul telaio e sul davanzale, dove la muffa attacca il silicone e il legno.</li>
+<li><strong>Deumidificatore</strong>, se con i primi tre punti l'umidità resta sopra il 55-60%: tampona nelle settimane più fredde. Il confronto tra modelli è in preparazione.</li>
+<li><strong>Serramenti.</strong> Se i vetri sono singoli, o doppi di prima generazione senza canalina termica, condensano anche con l'aria in ordine: la sostituzione risolve, ma attenzione al rovescio della medaglia. Una casa con finestre nuove e ermetiche ricambia meno aria da sola: se non si arieggia di più, la condensa sparisce dai vetri e ricompare come muffa negli angoli. Chi cambia le finestre dovrebbe mettere in conto anche la ventilazione, con aeratori nel telaio o un impianto; quando conviene è spiegato nella guida sulle finestre.</li>
+</ol>
+<h2>Un numero da ricordare</h2>
+<p>Se l'igrometro in camera segna oltre il 60% la mattina, i vetri condensano quasi con qualsiasi serramento: il problema è l'aria. Se segna sotto il 50% e i vetri sono comunque bagnati, il problema è il vetro. In mezzo, di solito, basta cambiare abitudini.</p>
+<p class="nota">Questa guida non sostituisce la valutazione di un tecnico. Per la muffa che ne deriva e per distinguerla da infiltrazioni e risalita: <a href="/muffa/muffa-in-casa/">Muffa in casa: da dove viene e come eliminarla davvero</a>.</p>
+""", sources=fonti("minsal_muffe", "iss_covid_11", "oms_dampness"),
+    section="muffa", data="11 novembre 2026",
+    breve=["I vetri si bagnano quando l'aria umida tocca la superficie più fredda della stanza: con 20 °C e 65% di umidità basta un vetro a 13 °C.",
+           "Nove volte su dieci la causa è l'aria (respiro, docce, bucato, poco ricambio), non la finestra; l'igrometro lo dice subito.",
+           "Prima arieggiare bene e produrre meno vapore, poi deumidificatore; i serramenti nuovi risolvono ma richiedono più ventilazione."],
+    chiave=("13 °C", "punto di rugiada", "con aria a 20 °C e umidità al 65%: ogni superficie più fredda si bagna"))
+
+# ------------------------------------------------------------- bozze
 add("/bozze/risanamento/", "BOZZA: radon alto, come si risana una casa e quanto costa",
     "Bozza. Costi di risanamento da verificare prima della pubblicazione.",
     """
@@ -978,7 +1061,7 @@ def render_page(p):
     noindex = p["status"] == "draft"
     en = p.get("lang") == "it" and False or p.get("lang") == "en"
     is_guide = p["section"] in TEMI_NOMI or (en and p["chiave"] is not None)
-    T = dict(indice="On this page", breve="In short", fonti="Sources", link="Links checked on", verif="Sources checked on", corr="Corrections", nocorr="No corrections so far.", data=DATA_EN) if en else dict(indice="In questa pagina", breve="In breve", fonti="Fonti", link="Link controllati il", verif="Fonti verificate il", corr="Correzioni", nocorr="Nessuna correzione finora.", data=DATA_ULTIMA_VERIFICA)
+    T = dict(indice="On this page", breve="In short", fonti="Sources", link="Links checked on", verif="Sources checked on", corr="Corrections", nocorr="No corrections so far.", data=DATA_EN) if en else dict(indice="In questa pagina", breve="In breve", fonti="Fonti", link="Link controllati il", verif="Fonti verificate il", corr="Correzioni", nocorr="Nessuna correzione finora.", data=p.get("data") or DATA_ULTIMA_VERIFICA)
 
     aside = ""
     if is_guide:
@@ -1263,6 +1346,11 @@ th{font-weight:600;color:var(--inchiostro);background:var(--nebbia-chiara)}
 .sc-unit{font:400 12.5px "IBM Plex Sans",sans-serif;fill:var(--grigio)}
 .guide{padding:44px 24px 8px}
 .guide h2{margin-top:0}
+.tab{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:15px}
+.tab th,.tab td{border-bottom:1px solid var(--nebbia);padding:10px 10px;text-align:left;vertical-align:top}
+.tab th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--grigio);background:var(--nebbia-chiara)}
+.tab td:first-child{font-weight:500}
+@media (max-width:860px){.tab{display:block;overflow-x:auto;white-space:nowrap}.tab td,.tab th{white-space:normal;min-width:150px}}
 .schema{margin:24px 0;background:var(--bianco);border:1px solid var(--nebbia);border-radius:10px;padding:12px}
 .schema svg{width:100%;height:auto;display:block}
 .schema figcaption{font-size:14px;color:var(--grigio);margin-top:10px;line-height:1.5}
