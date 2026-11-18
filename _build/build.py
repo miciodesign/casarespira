@@ -296,8 +296,8 @@ add("/radon/come-si-misura/", "Come si misura il radon in casa",
            "Si misura nel locale abitato più basso, vivendo la casa come sempre."],
     chiave=("12", "mesi", "durata di riferimento della misura, per ottenere una media annua"))
 
-add("/radon/normativa/", "Radon: cosa dice la legge per abitazioni e luoghi di lavoro",
-    "Il D.Lgs. 101/2020, i livelli di riferimento, le aree prioritarie e gli obblighi per i luoghi di lavoro.",
+add("/radon/normativa/", "Radon, la legge italiana: D.Lgs. 101/2020 per casa e lavoro",
+    "Livelli di riferimento, aree prioritarie e obblighi per abitazioni e luoghi di lavoro, con i riferimenti ufficiali (D.Lgs. 101/2020).",
     """
 <p>Il radon è regolato dal D.Lgs. 101/2020, che ha recepito la direttiva Euratom 2013/59. Il decreto è stato modificato dal D.Lgs. 203/2022. Questa pagina riassume cosa dice, articolo per articolo.</p>
 <h2>I livelli di riferimento</h2>
@@ -376,8 +376,8 @@ VESPAIO_SVG = """<figure class="schema"><svg viewBox="0 0 760 360" role="img" ar
 <g stroke="#16222E" stroke-width="1.2" fill="none"><path d="M732 182 H660"/><path d="M732 150 H690 V172 H626"/><path d="M732 118 H676 V160 H626"/></g>
 </svg><figcaption><strong>1</strong> terreno e magrone · <strong>2</strong> casseri a cupola (igloo): la camera d'aria continua · <strong>3</strong> soletta in calcestruzzo armato · <strong>4</strong> membrana antiradon, risvoltata sui muri · <strong>5</strong> massetto e pavimento · <strong>6</strong> bocchette su lati opposti, a quote diverse. L'aria entra dal lato freddo, attraversa la camera ed esce dal lato caldo portando con sé umidità e radon.</figcaption></figure>"""
 
-add("/radon/vespaio-aerato/", "Vespaio aerato: cos'è, come è fatto e perché protegge da radon e umidità",
-    "Com'è fatto un vespaio aerato (igloo, soletta, bocchette, membrana), come funziona la ventilazione, cosa dicono ISPRA e le linee guida regionali sul radon, e quando non basta.",
+add("/radon/vespaio-aerato/", "Vespaio aerato: come è fatto e se protegge da radon",
+    "Igloo, soletta, bocchette e membrana: come è fatto un vespaio aerato, come funziona contro radon e umidità, e quando non basta da solo.",
     """
 <p>Chi costruisce o ristruttura un piano terra si sente dire che "ci vuole il vespaio aerato". È la soluzione che le linee guida sul radon raccomandano per le nuove costruzioni, ed è anche la difesa classica contro l'umidità di risalita. Questa guida spiega com'è fatto, come funziona e quando da solo non basta.</p>
 <h2>Cos'è un vespaio</h2>
@@ -884,13 +884,13 @@ add("/bozze/risanamento/", "BOZZA: radon alto, come si risana una casa e quanto 
 # (slug, data ISO, data leggibile, titolo, cosa è successo, cosa cambia per chi legge, [(etichetta fonte, url)])
 NEWS = [
     ("pfas-liguria-borgio-verezzi-novembre-2026", "2026-11-06", "6 novembre 2026",
-     "PFAS nell'acqua in Liguria: a Borgio Verezzi e Pietra Ligure si lavora ai filtri a carboni attivi",
+     "PFAS in Liguria: filtri a carboni attivi a Borgio Verezzi e Pietra Ligure",
      "Il gestore Servizi Ambientali ha confermato il 4 novembre la priorità degli interventi di filtrazione a carboni attivi per ripristinare la potabilità dell'acqua nei Comuni di Borgio Verezzi e Pietra Ligure (Savona), dove sono stati trovati PFAS oltre i limiti. La Regione Liguria ha istituito una cabina di regia e la Procura di Savona ha aperto un fascicolo.",
      "Chi vive nei due Comuni deve seguire le ordinanze comunali e le comunicazioni del gestore sull'uso dell'acqua. Per tutti gli altri, il caso mostra come funziona la nuova norma: dal 2026 i PFAS sono un parametro di legge e, se superano il limite, il gestore deve intervenire. Cosa sono e come leggere i dati del proprio comune è spiegato nella guida ai PFAS nell'acqua.",
      [("Savonanews, PFAS nell'acqua, Servizi Ambientali accelera sugli interventi (6 novembre 2026)", "https://www.savonanews.it/2026/11/06/leggi-notizia/argomenti/attualit/articolo/pfas-nellacqua-servizi-ambientali-accelera-sugli-interventi-necessario-il-sostegno-economico-di.html"),
       ("Casa Respira, PFAS nell'acqua del rubinetto: cosa sono e cosa dice la legge", "https://casarespira.it/acqua/pfas/")]),
     ("bergamo-campagna-radon-ottobre-2026", "2026-09-30", "30 settembre 2026",
-     "Bergamo: dal 1° ottobre misura gratuita del radon in nove comuni",
+     "Radon a Bergamo: misura gratuita in nove comuni (ATS e ARPA Lombardia)",
      "ATS Bergamo, con ARPA Lombardia, ha avviato dal 1° ottobre 2026 una campagna gratuita di misura del radon nelle abitazioni di nove comuni della provincia. Ai cittadini che aderiscono viene consegnato un dosimetro passivo da posizionare in casa; la prima misura dura circa sei mesi e al termine ogni partecipante riceve il risultato della propria abitazione.",
      "Se abiti in uno dei comuni coinvolti, è l'occasione per una misura di qualità senza spesa. L'elenco dei comuni e il modulo di adesione sono sul sito di ATS Bergamo.",
      [("ATS Bergamo, comunicato del 30 settembre 2026", "https://www.ats-bg.it/news/radon-nelle-abitazioni-ats-bergamo-avvia-una-nuova-campagna-citizen-science-alcuni-comuni-bergamasachi")]),
